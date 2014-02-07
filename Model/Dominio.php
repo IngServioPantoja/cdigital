@@ -1,19 +1,19 @@
 <?php
 App::uses('AppModel', 'Model');
 /**
- * Pregunta Model
+ * Dominio Model
  *
- * @property Dominio $Dominio
- * @property Respuesta $Respuesta
+ * @property Competencia $Competencia
+ * @property Pregunta $Pregunta
  */
-class Pregunta extends AppModel {
+class Dominio extends AppModel {
 
 /**
  * Display field
  *
  * @var string
  */
-	public $displayField = 'titulo';
+	public $displayField = 'nombre';
 
 
 	//The Associations below have been created with all possible keys, those that are not needed can be removed
@@ -24,9 +24,9 @@ class Pregunta extends AppModel {
  * @var array
  */
 	public $belongsTo = array(
-		'Dominio' => array(
-			'className' => 'Dominio',
-			'foreignKey' => 'dominio_id',
+		'Competencia' => array(
+			'className' => 'Competencia',
+			'foreignKey' => 'competencia_id',
 			'conditions' => '',
 			'fields' => '',
 			'order' => ''
@@ -39,9 +39,9 @@ class Pregunta extends AppModel {
  * @var array
  */
 	public $hasMany = array(
-		'Respuesta' => array(
-			'className' => 'Respuesta',
-			'foreignKey' => 'pregunta_id',
+		'Pregunta' => array(
+			'className' => 'Pregunta',
+			'foreignKey' => 'dominio_id',
 			'dependent' => false,
 			'conditions' => '',
 			'fields' => '',

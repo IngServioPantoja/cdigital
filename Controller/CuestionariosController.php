@@ -7,11 +7,8 @@ App::uses('AppController', 'Controller');
  */
 class CuestionariosController extends AppController {
 var $components = array("RequestHandler");
-/**
- * index method
- *
- * @return void
- */
+var $uses = array('Cuestionario','Persona','Competencia','Dominio','Pregunta');
+
 	public function index() {
 		$this->Cuestionario->recursive = 0;
 		$this->set('cuestionarios', $this->paginate());
@@ -70,11 +67,15 @@ var $components = array("RequestHandler");
 				$this->Session->setFlash(__('The cuestionario could not be saved. Please, try again.'));
 			}
 		} else {
+			$this->Cuestionario->recursive = 2;
 			$options = array('conditions' => array('Cuestionario.' . $this->Cuestionario->primaryKey => $id));
 			$this->request->data = $this->Cuestionario->find('first', $options);
+			print_r($this->request->data);
+			echo "</br></br>";
+			$this->set('cuestionario',$this->request->data);
 		}
-		$personas = $this->Cuestionario->Persona->find('list');
-		$this->set(compact('personas'));
+		//$personas = $this->Cuestionario->Persona->find('list');
+		//$this->set(compact('personas'));
 	}
 /* edicion de cualquier campo general del cuestionario */
 

@@ -39,72 +39,32 @@
 	</br>
 	<fieldset class="primer_fieldsetm">
 		<legend class="primer_legend">Preguntas</legend>
+			<?php 
+			foreach ($cuestionario['Competencia'] as $key) {
+			echo $this->Form->create('Competencia');
+			?>
 			<fieldset class="primer_fieldsetm">
-				<legend class="primer_legend">Uso de las Tic</legend>
+				<legend class="primer_legend"><?php echo $key['nombre']; ?></legend>
+					<?php 
+					foreach ($key['Dominio'] as $value) 
+					{
+					?>
 					<fieldset class="primer_fieldset">
-						<legend class="primer_legend">Primer nivel de dominio</legend>
+						<legend class="primer_legend"><?php echo $value['nombre']; ?></legend>
 							<fieldset class="segunda_fieldset">
 								<legend class="segunda_legend">Preguntas 1</legend>
 							</fieldset>
 					</fieldset>
-					<fieldset class="primer_fieldset">
-						<legend class="primer_legend">Segundo nivel de dominio</legend>
-							<fieldset class="segunda_fieldset">
-								<legend class="segunda_legend">Preguntas 1</legend>
-							</fieldset>
-					</fieldset>
-					<fieldset class="primer_fieldset">
-						<legend class="primer_legend">Tercer nivel de dominio</legend>
-							<fieldset class="segunda_fieldset">
-								<legend class="segunda_legend">Preguntas 1</legend>
-							</fieldset>
-					</fieldset>
+					<?php
+					}
+					?>
+					</br>
 			</fieldset>
-			</br>
-			<fieldset class="primer_fieldsetm">
-				<legend class="primer_legend">Gestion de bases de datos</legend>
-					<fieldset class="primer_fieldset">
-						<legend class="primer_legend">Primer nivel de dominio</legend>
-							<fieldset class="segunda_fieldset">
-								<legend class="segunda_legend">Preguntas 1</legend>
-							</fieldset>
-					</fieldset>
-					<fieldset class="primer_fieldset">
-						<legend class="primer_legend">Segundo nivel de dominio</legend>
-							<fieldset class="segunda_fieldset">
-								<legend class="segunda_legend">Preguntas 1</legend>
-							</fieldset>
-					</fieldset>
-					<fieldset class="primer_fieldset">
-						<legend class="primer_legend">Tercer nivel de dominio</legend>
-							<fieldset class="segunda_fieldset">
-								<legend class="segunda_legend">Preguntas 1</legend>
-							</fieldset>
-					</fieldset>
-			</fieldset>
-			</br>
-			<fieldset class="primer_fieldsetm">
-				<legend class="primer_legend">Uso de las TIC para la búsqueda y tratamiento de la información</legend>
-					<fieldset class="primer_fieldset">
-						<legend class="primer_legend">Primer nivel de dominio</legend>
-							<fieldset class="segunda_fieldset">
-								<legend class="segunda_legend">Preguntas 1</legend>
-							</fieldset>
-					</fieldset>
-			</fieldset>
+			<?php
+			}
+			?>
+			</br></br>
 	</fieldset>
-	<div class="actions">
-		<h3><?php echo __('Actions'); ?></h3>
-		<ul>
-
-			<li><?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $this->Form->value('Cuestionario.id')), null, __('Are you sure you want to delete # %s?', $this->Form->value('Cuestionario.id'))); ?></li>
-			<li><?php echo $this->Html->link(__('List Cuestionarios'), array('action' => 'index')); ?></li>
-			<li><?php echo $this->Html->link(__('List Preguntas'), array('controller' => 'preguntas', 'action' => 'index')); ?> </li>
-			<li><?php echo $this->Html->link(__('New Pregunta'), array('controller' => 'preguntas', 'action' => 'add')); ?> </li>
-			<li><?php echo $this->Html->link(__('List Personas'), array('controller' => 'personas', 'action' => 'index')); ?> </li>
-			<li><?php echo $this->Html->link(__('New Persona'), array('controller' => 'personas', 'action' => 'add')); ?> </li>
-		</ul>
-	</div>
 </section>
 <?php
 $this->Js->get('#titulo')->event('blur',

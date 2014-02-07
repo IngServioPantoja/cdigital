@@ -1,8 +1,10 @@
-<html>
+<!DOCTYPE html>
+<html lang='es_Es'>
     <head>
         <title>
             Software con CakePHP
         </title>
+        <meta charset="utf-8"/>
         <?php 
 			echo $this->Html->css(array('layout','normalize','style','extjs')); 
             echo $this->Html->script(array('jquery',)); 

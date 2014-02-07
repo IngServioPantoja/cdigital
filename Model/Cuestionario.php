@@ -3,7 +3,7 @@ App::uses('AppModel', 'Model');
 /**
  * Cuestionario Model
  *
- * @property Pregunta $Pregunta
+ * @property Competencia $Competencia
  * @property Persona $Persona
  */
 class Cuestionario extends AppModel {
@@ -24,8 +24,8 @@ class Cuestionario extends AppModel {
  * @var array
  */
 	public $hasMany = array(
-		'Pregunta' => array(
-			'className' => 'Pregunta',
+		'Competencia' => array(
+			'className' => 'Competencia',
 			'foreignKey' => 'cuestionario_id',
 			'dependent' => false,
 			'conditions' => '',
@@ -58,8 +58,6 @@ class Cuestionario extends AppModel {
 			'limit' => '',
 			'offset' => '',
 			'finderQuery' => '',
-			'deleteQuery' => '',
-			'insertQuery' => ''
 		)
 	);
 
