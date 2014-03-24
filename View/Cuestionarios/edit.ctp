@@ -40,33 +40,79 @@
 	<fieldset class="primer_fieldsetm">
 		<legend class="primer_legend">Preguntas</legend>
 			<?php 
-			foreach ($cuestionario['Competencia'] as $key) {
-			echo $this->Form->create('Competencia');
-			?>
-			<fieldset class="primer_fieldsetm">
-				<legend class="primer_legend"><?php echo $key['nombre']; ?></legend>
-					<?php 
-					foreach ($key['Dominio'] as $value) 
-					{
-					?>
-					<fieldset class="primer_fieldset">
-						<legend class="primer_legend"><?php echo $value['nombre']; ?></legend>
-							<fieldset class="segunda_fieldset">
-								<legend class="segunda_legend">Preguntas 1</legend>
+			if(isset($cuestionario['Competencias']))
+			{
+				foreach ($cuestionario['Competencias'] as $competencia) {
+				?>
+				<fieldset class="primer_fieldsetm">
+					<legend class="primer_legend"><?php echo $competencia['Competencia']['nombre']; ?></legend>
+						<?php 
+						if(isset($competencia['Competencia']['Dominios']))
+						{
+							foreach ($competencia['Competencia']['Dominios'] as $dominio) 
+							{
+							?>
+							<fieldset class="primer_fieldset">
+								<legend class="primer_legend"><?php echo $dominio['nombre']; ?></legend>
+									<?php
+									if(isset($dominio['Preguntas']))
+									{
+										$preguntanumero=0;
+										foreach ($dominio['Preguntas'] as $pregunta) 
+										{
+										?>
+										<fieldset class="segunda_fieldset">
+											<legend class="segunda_legend">
+												Pregunta:
+												<?php
+												echo $preguntanumero;
+												?>
+											</legend>
+											
+											
+												<p>
+													<?php
+														echo $this->Form->create('Pregunta',array('action'=>'lolll','update'=>'#asd'));
+
+													?>
+													<?php
+														echo $this->Form->input('id',array('type'=>'hidden','value'=>$pregunta['id']));
+													?>
+													<?php
+														echo $this->Form->input('titulo', array("label" => false,
+																							"class" => "cuestionario_titulo_input",
+																							"rows"=>"4",'id' =>'titulo','value'=>$pregunta['titulo']));
+													?>
+													<?php
+														echo $this->Form->end();
+													?>
+												</p>
+										</fieldset>
+										<?php
+										++$preguntanumero;
+										}
+									}
+									?>
 							</fieldset>
-					</fieldset>
-					<?php
-					}
-					?>
-					</br>
-			</fieldset>
-			<?php
+							<?php
+							}
+						}
+						?>
+						</br>
+				</fieldset>
+				<?php
+				}
 			}
 			?>
 			</br></br>
 	</fieldset>
 </section>
 <?php
+function cargar()
+{
+
+}
+
 $this->Js->get('#titulo')->event('blur',
 	$this->Js->request(
 	    array(

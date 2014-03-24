@@ -8,5 +8,6 @@ class DATABASE_CONFIG {
 		'login' => 'compdig',
 		'password' => 'compdig',
 		'database' => 'compdig',
+		'encoding' => 'utf8',
 	);
 }
