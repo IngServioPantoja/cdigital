@@ -107,7 +107,8 @@ class MenusController extends AppController {
         echo ($Usuario['Persona']['nombre']);
         echo ($Usuario['Persona']['apellido']);
         echo ($Usuario['Nivel']['nombre']);
-        $r = $this->MenusNivel->find('all',array('conditions' => array('menusnivel.nivel_id'=> $Usuario['User']['nivel_id']),"fields" => array('menu.texto','menu.vinculo'),'order' => array('menusnivel.orden' => 'asc')));
+        
+        $r = $this->MenusNivel->find('all',array('conditions' => array('MenusNivel.nivel_id'=> $Usuario['User']['nivel_id']),"fields" => array('Menu.texto','Menu.vinculo'),'order' => array('MenusNivel.orden' => 'asc')));
 		$menu = array(); 
 		foreach ($r as $r2):
 		foreach ($r2 as $r3):

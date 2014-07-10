@@ -38,6 +38,27 @@
 	</fieldset>
 	</br>
 	<fieldset class="primer_fieldsetm">
+		<fieldset class="segunda_fieldset">
+			<legend class="segunda_legend">Nueva pregunta</legend>
+		<?php
+			echo $this->Form->create('Pregunta',array('url' => array('controller' => 'cuestionarios', 'action' => 'edit/1')));
+		?>
+		<?php
+			echo $this->Form->input('titulo', array("label" => false,'type'=>'text',"class" => "cuestionario_titulo_input","rows"=>"4",'id' =>'titulo','required'=>'required'));
+		?>
+		<?php
+			echo $this->Form->select(
+				'dominio_id', $dominios,array('id'=>'dominio_id','autocomplete' =>'off','empty'=>false,'class'=>'inputCorto left')
+			);
+		?>
+		<?php 
+			echo $this->Form->end(array('label' => 'Agregar pregunta','div' => array('class' => 'div_submit_centrado_2')));
+		?>
+		</fieldset>
+	
+		</br>
+	</fieldset>
+	<fieldset class="primer_fieldsetm">
 		<legend class="primer_legend">Preguntas</legend>
 			<?php 
 			if(isset($cuestionario['Competencias']))
@@ -57,7 +78,7 @@
 									<?php
 									if(isset($dominio['Preguntas']))
 									{
-										$preguntanumero=0;
+										$preguntanumero=1;
 										foreach ($dominio['Preguntas'] as $pregunta) 
 										{
 										?>
@@ -79,10 +100,12 @@
 														echo $this->Form->input('id',array('type'=>'hidden','value'=>$pregunta['id']));
 													?>
 													<?php
-														echo $this->Form->input('titulo', array("label" => false,
-																							"class" => "cuestionario_titulo_input",
-																							"rows"=>"4",'id' =>'titulo','value'=>$pregunta['titulo']));
+														echo $this->Form->input('titulo', array("label" => false,'type'=>'text',"class" => "cuestionario_titulo_input",
+																							"rows"=>"4",'id' =>'titulo','value'=>$pregunta['titulo'],'onBlur'=>'actualizar_pregunta(this)','idpregunta'=>$pregunta['id']));
 													?>
+													<div class='div_loading'>
+														<?php echo $this->Html->image('loader1.gif', array('alt' => 'loader',"class" => "img_loader", 'id' => $pregunta['id'])); ?>
+													</div>
 													<?php
 														echo $this->Form->end();
 													?>
@@ -93,6 +116,7 @@
 										}
 									}
 									?>
+								</br>
 							</fieldset>
 							<?php
 							}
@@ -105,14 +129,10 @@
 			}
 			?>
 			</br></br>
+
 	</fieldset>
 </section>
 <?php
-function cargar()
-{
-
-}
-
 $this->Js->get('#titulo')->event('blur',
 	$this->Js->request(
 	    array(
@@ -156,4 +176,31 @@ $this->Js->get('#descripcion')->event('blur',
 	)
 );
 ?>
+<script>
+	
+	function actualizar_pregunta(e)
+	{	
+		var valor=$(e).val();
+		var id=$(e).attr("idpregunta");
+		var respuesta=$.ajax
+		(
+			{
+			  type: 'post',
+	          dataType: 'json',
+	          url: "<?php echo $this->Html->url(array('action' => 'actualizar_pregunta')); ?>",
+			  data: 'id='+id+'&titulo='+valor,
+			  beforeSend: function() {
+				$("#"+id).fadeIn();
+
+			  }
+			}
+		);
+		respuesta.always(function() 
+		{
+		$("#"+id).fadeOut();
+		}
+		)
+	}
+
+</script>
 <?php echo $this->Js->writeBuffer(); ?>

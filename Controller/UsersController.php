@@ -8,7 +8,7 @@ App::uses('AppController', 'Controller');
 class UsersController extends AppController {
     var $helpers = array("Html", "Form");
     var $components = array("Auth");
-    var $uses = array('User');
+    var $uses = array('User','Persona','PersonasCuestionario');
 
 /**
  * index method
@@ -122,6 +122,30 @@ class UsersController extends AppController {
            	 	));
 				if(count($r)==3){
 					if($this->Auth->login($this->data)){
+						$opciones=array(
+										'joins' => array(
+									        array(
+									            'table' => 'personas',
+									            'alias' => 'Persona',
+									            'type' => 'INNER',
+									            'conditions' => 
+									            array(
+									                'Persona.id = PersonasCuestionario.persona_id'
+									            	)
+									        	)
+							    		),
+									    'recursive' => -1,
+									    'limit'=>1
+									);
+								$PersonasCuestionario=$this->PersonasCuestionario->find('first', $opciones);
+								
+						
+						if (isset($PersonasCuestionario['PersonasCuestionario'])) {
+							$r['Cuestionario']=$PersonasCuestionario['PersonasCuestionario'];
+						}else
+						{
+							$r['Cuestionario']['id']=0;
+						}
 						$this->Session->write("Usuario",$r);
 						print_r($r);
 						$this->redirect("/menus/mnuMain/");

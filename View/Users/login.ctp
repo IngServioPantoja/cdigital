@@ -35,7 +35,7 @@
         </header>
         <article>
             <p>
-                La herramienta Compdig es una herramienta de ámbito web creada bajo el paradigma de programación orientado a objetos, para su desarrollo también se requiere el framework Cake Php y el entorno de desarrollo Wamp Server entre otros. El fin de esta herramienta  es evaluar las competencias digitales de los estudiantes de la Institución Universitaria CESMAG a través de un cuestionario web.  De igual forma esta herramienta contara con diversas opciones como la consulta de resultados del cuestionario y contara con tipos de usuarios, teniendo al usuario administrador y al usuario general, en la cual el usuario administrador tendrá privilegios exclusivos como la opción de administración de usuarios entre otras opciones.
+                La herramienta Compdig es una herramienta de ámbito web creada bajo el paradigma de programación orientado a objetos, para su desarrollo también se requiere el framework Cake Php y el entorno de desarrollo Xampp Server entre otros. El fin de esta herramienta  es evaluar las competencias digitales de los estudiantes de la Institución Universitaria CESMAG a través de un cuestionario web.  De igual forma esta herramienta contara con diversas opciones como la consulta de resultados del cuestionario y contara con tipos de usuarios, teniendo al usuario administrador y al usuario general, en la cual el usuario administrador tendrá privilegios exclusivos como la opción de administración de usuarios entre otras opciones.
             </p>
         </article>
     </section>

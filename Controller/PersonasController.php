@@ -20,17 +20,21 @@ function beforeFilter(){
  * @return void
  */
 	public function index() { 
-		$this->Persona->recursive = 1;
+		$this->Persona->recursive = 2;
 		if(isset($this->request->data['Busqueda'])){ 
 			if ($this->request->data['Busqueda']['itemBusqueda']!=NULL and $this->request->data['Busqueda']['valorBusqueda']!=NULL) {
 				$criterio=$this->request->data['Busqueda']['itemBusqueda'];
 				$valor=$this->request->data['Busqueda']['valorBusqueda'];
-				$this->set('personas', $this->paginate('Persona',array('Persona.'.$criterio.' LIKE' => '%'.$valor.'%')));
+				$personas=$this->paginate('Persona',array('Persona.'.$criterio.' LIKE' => '%'.$valor.'%'));
+				$this->set('personas',$personas);
 			}else{ 
-				$this->set('personas', $this->paginate('Persona'));
+				$personas=$this->paginate('Persona');
+				$this->set('personas', $personas);
 			}
+			
 		}else{ 
-			$this->set('personas', $this->paginate('Persona'));
+			$personas=$this->paginate('Persona');
+				$this->set('personas', $personas);
 		}
 		$findTabla =$this->Persona->query("SELECT * FROM personas LIMIT 1;");
 		foreach ($findTabla as $lbaKey => $lbaValue) {
@@ -61,13 +65,10 @@ function beforeFilter(){
 		if (!$this->Persona->exists($id)) {
 			throw new NotFoundException(__('Invalid persona'));
 		}
-		$this->User->recursive = 1;
+		$this->User->recursive = 3;
 		$optionspe = array('conditions' => array('Persona.' . $this->Persona->primaryKey => $id));
-		$datospesona=$this->User->find('first', $optionspe);
-		$optionspro = array('conditions' => array('Programa.' . $this->Programa->primaryKey => $datospesona['Persona']['programa_id']));
-		$datosprograma=$this->Programa->find('first', $optionspro);
-		$datospesona['Programa']=$datosprograma['Programa'];
-		$this->set('persona',$datospesona);
+		$datospersona=$this->User->find('first', $optionspe);
+		$this->set('persona',$datospersona);
 
 	}
 
@@ -96,21 +97,34 @@ function beforeFilter(){
 			    	)
 				);
 				if(count($registrado)<1){
-					$this->request->data['User']['password']=Security::hash($this->request->data['User']['password'], null, true);
-					$this->request->data['User']['username']=$this->request->data['Persona']['email'];
-					$this->Persona->create();
-					$this->User->create();
-					$this->PersonasProgramasSemestre->create();
-					if ($this->Persona->User->saveall($this->request->data)) {
-						$this->request->data['PersonasProgramasSemestre']['persona_id']=$this->Persona->getInsertID();
-						$this->PersonasProgramasSemestre->save($this->request->data);
-						$this->Session->setFlash(__('The persona has been saved'));
-						$this->redirect(array('action' => 'index'));
-					} else {
-						$this->Session->setFlash(__('The persona could not be saved. Please, try again.'));
-					}
 
+					$registrado = $this->Persona->find('first',
+					array(
+				    	'conditions' => 
+				            array(
+				                'Persona.identificacion' => $this->request->data['Persona']['identificacion']
+				            	)
+				    	)
+					);
+						if(count($registrado)<1){
 
+							$this->request->data['User']['password']=Security::hash($this->request->data['User']['password'], null, true);
+							$this->request->data['User']['username']=$this->request->data['Persona']['email'];
+							$this->Persona->create();
+							$this->User->create();
+							$this->PersonasProgramasSemestre->create();
+							if ($this->Persona->User->saveall($this->request->data)) {
+								$this->request->data['PersonasProgramasSemestre']['persona_id']=$this->Persona->getInsertID();
+								$this->PersonasProgramasSemestre->save($this->request->data);
+								$this->Session->setFlash(__('Usuario registrado exitosamente'));
+								$this->redirect(array('action' => 'index'));
+							} else {
+								$this->Session->setFlash(__('Usuario registrado exitosamente'));
+							}
+						}else
+						{
+							$this->set('estado_cedula',"La cedula ya ha sido registrada");	
+						}
 				}else{
 					$this->set('validar_correo',$validar_correo=1);				
 				}	
@@ -162,20 +176,38 @@ function beforeFilter(){
 			    	)
 				);
 				if(count($registrado)<1){
-					$this->request->data['User']['nivel_id']=2;
-					$this->request->data['User']['password']=Security::hash($this->request->data['User']['password'], null, true);
-					$this->request->data['User']['username']=$this->request->data['Persona']['email'];
-					$this->Persona->create();
-					$this->User->create();
-					$this->PersonasProgramasSemestre->create();
-					if ($this->Persona->User->saveall($this->request->data)) {
-						$this->request->data['PersonasProgramasSemestre']['persona_id']=$this->Persona->getInsertID();
-						$this->PersonasProgramasSemestre->save($this->request->data);
-						$this->Session->setFlash(__('The persona has been saved'));
-						$this->redirect(array('action' => 'index'));
-					} else {
-						$this->Session->setFlash(__('The persona could not be saved. Please, try again.'));
-					}
+
+					$registrado = $this->Persona->find('first',
+					array(
+				    	'conditions' => 
+				            array(
+				                'Persona.identificacion' => $this->request->data['Persona']['identificacion']
+				            	)
+				    	)
+					);
+						if(count($registrado)<1){
+							$this->request->data['User']['nivel_id']=2;
+							$this->request->data['User']['password']=Security::hash($this->request->data['User']['password'], null, true);
+							$this->request->data['User']['username']=$this->request->data['Persona']['email'];
+							$this->Persona->create();
+							$this->User->create();
+							$this->PersonasProgramasSemestre->create();
+							if ($this->Persona->User->saveall($this->request->data)) {
+								$this->request->data['PersonasProgramasSemestre']['persona_id']=$this->Persona->getInsertID();
+								$this->PersonasProgramasSemestre->save($this->request->data);
+								$this->Session->setFlash(__('Usuario registrado exitosamente'));
+								$this->redirect(array('action' => 'index'));
+							} else {
+								$this->Session->setFlash(__('El usuario no ha podido ser registrado'));
+							}
+						}else
+						{
+							$this->set('estado_cedula',"La cedula ya ha sido registrada");	
+						}
+
+
+
+
 				}else{
 					$this->set('validar_correo',$validar_correo=1);				
 				}	
@@ -212,15 +244,13 @@ function beforeFilter(){
 			$this->Persona->create();
 			$this->User->create();
 			$this->PersonasProgramasSemestre->create();
-			echo "</br>";echo "</br>";
-			print_r($this->request->data);
-			echo "</br>";echo "</br>";
 			if ($this->Persona->User->saveall($this->request->data)) {
 				$this->PersonasProgramasSemestre->save($this->request->data);
+				$this->Session->setFlash(__('Usuario modificado exitosamente'));
 				$this->redirect(array('action' => 'index'));
-				$this->Session->setFlash(__('Usuario modificado'));
+				
 			} else {
-				$this->Session->setFlash(__('The persona could not be saved. Please, try again.'));
+				$this->Session->setFlash(__('El usuario no ha podido ser actualizado intente nuevamente'));
 			}
 		} else {
 
@@ -244,13 +274,6 @@ function beforeFilter(){
 		//print_r($this->request->data);
 	}
 
-/**
- * edit method
- *
- * @throws NotFoundException
- * @param string $id
- * @return void
- */
 	public function edit2($id = null) {
 		if (!$this->Persona->exists($id)) {
 			throw new NotFoundException(__('Invalid persona'));
@@ -278,10 +301,10 @@ function beforeFilter(){
 					$this->Persona->create();
 					$this->User->create();
 					if ($this->Persona->User->saveall($this->request->data)) {
-						$this->Session->setFlash(__('The persona has been saved'));
+						$this->Session->setFlash(__('Usuario registrado exitosamente'));
 						$this->redirect(array('action' => 'index'));
 					} else {
-						$this->Session->setFlash(__('The persona could not be saved. Please, try again.'));
+						$this->Session->setFlash(__('La persona no ha podido ser registrada'));
 					}
 
 
@@ -329,15 +352,6 @@ function beforeFilter(){
 		print_r($this->request->data);
 	}
 
-
-/**
- * delete method
- *
- * @throws NotFoundException
- * @throws MethodNotAllowedException
- * @param string $id
- * @return void
- */
 	public function delete($id = null) {
 		$this->Persona->id = $id;
 		if (!$this->Persona->exists()) {
@@ -345,10 +359,11 @@ function beforeFilter(){
 		}
 		$this->request->onlyAllow('post', 'delete');
 		if ($this->Persona->delete()) {
-			$this->Session->setFlash(__('Persona deleted'));
+			$this->Cuestionario->query("delete from user where users.persona_id = $id");
+			$this->Session->setFlash(__('La Persona ha sido eliminada exitosamente'));
 			$this->redirect(array('action' => 'index'));
 		}
-		$this->Session->setFlash(__('Persona was not deleted'));
+		$this->Session->setFlash(__('La persona no ha sido registrada intente nuevamente'));
 		$this->redirect(array('action' => 'index'));
 	}
 }

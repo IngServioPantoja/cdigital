@@ -2,13 +2,20 @@
 <html lang='es_Es'>
     <head>
         <title>
-            Software con CakePHP
+            Compdig
         </title>
         <meta charset="utf-8"/>
+                <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.0/css/jquery.dataTables.css">
+                <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/tabletools/2.2.1/css/dataTables.tableTools.css">
         <?php 
-			echo $this->Html->css(array('layout','normalize','style','extjs')); 
-            echo $this->Html->script(array('jquery',)); 
+			echo $this->Html->css(array('layout','normalize','style')); 
+            echo $this->Html->script(array('jquery','jquery.battatech.excelexport',)); 
         ?> 
+        <!-- DataTables -->
+        <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.0/js/jquery.dataTables.js"></script>
+        </script>
+        <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/tabletools/2.2.1/js/dataTables.tableTools.js"></script>
+        <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/tabletools/2.2.1/js/dataTables.tableTools.min.js"></script>
     </head>
         <body id="body_layout">
              <?php 

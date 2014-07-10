@@ -1,3 +1,3 @@
 <?php
-echo "Bienvenido a ABRAHAM";
+echo "Bienvenido a compdig";
 ?>

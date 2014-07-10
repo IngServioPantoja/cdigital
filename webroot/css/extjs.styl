@@ -1,0 +1,2919 @@
+vinotinto = #7a0400
+azuloscuro= #333377
+
+@font-face {
+  font-family: 'icomoon';
+  src:url('fonts/icomoon.eot');
+  src:url('fonts/icomoon.eot?#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.woff') format('woff'),
+    url('fonts/icomoon.ttf') format('truetype'),
+    url('fonts/icomoon.svg#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+/* Shdow DOM */
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+::-moz-scrollbar {
+    -moz-width: 5px;
+}
+   
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: #000000;
+}
+::-moz-scrollbar-track {
+  -moz-box-shadow: #000000;
+}
+
+::-webkit-scrollbar-button 
+{
+  padding-bottom: 10px;
+
+}
+::-moz-scrollbar-button 
+{
+  -moz-padding-bottom: 10px;
+
+}
+
+::-webkit-scrollbar-track-piece 
+{
+  background: #000000;  
+  -webkit-box-shadow: inset 0 0 5px rgba(31,87,148,0.4); 
+
+}
+::-moz-scrollbar-track-piece 
+{
+  -moz-background: #000000; 
+  -moz-box-shadow: inset 0 0 5px rgba(31,87,148,0.4); 
+
+}
+   
+::-webkit-scrollbar-thumb {
+  background: #000000;
+  -webkit-box-shadow: inset 0 0 15px rgba(31,87,148,1); 
+      transition:all 0.3s linear;
+    -webkit-transition:all 0.3s linear;
+    -moz-transition:all 0.3s linear;
+
+}
+::-moz-scrollbar-thumb {
+  -moz-background: #000000;
+  -moz--box-shadow: inset 0 0 10px rgba(31,87,148,1); 
+  -moz-transition:all 0.3s linear;
+    -moz--transition:all 0.3s linear;
+    -moz-transition:all 0.3s linear;
+
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #000000;
+  -webkit-box-shadow: inset 0 0 10px rgba(159,255,253,1); 
+}
+::-moz-scrollbar-thumb:hover {
+  -moz-background: #000000;
+  -moz-box-shadow: inset 0 0 10px rgba(159,255,253,1); 
+}
+
+html
+  bottom 0px
+  font-size 16px
+  left 0px
+  position fixed !important
+  right 0px
+  top 0px
+  width 100%
+  
+  body
+    width 100%
+    padding 0px
+    
+    a
+      color #fff
+
+      &:hover
+        color #227
+
+    header
+      background -moz-linear-gradient(top,  rgba(44,63,89,1) 0%, rgba(67,95,132,1) 22%, rgba(76,108,153,1) 27%, rgba(76,108,153,1) 46%, rgba(72,102,140,1) 65%, rgba(16,23,33,1) 85%, rgba(0,0,0,1) 100%) /* FF3.6+ */
+      background -ms-linear-gradient(top,  rgba(44,63,89,1) 0%,rgba(67,95,132,1) 22%,rgba(76,108,153,1) 27%,rgba(76,108,153,1) 46%,rgba(72,102,140,1) 65%,rgba(16,23,33,1) 85%,rgba(0,0,0,1) 100%) /* IE10+ */
+      background -o-linear-gradient(top,  rgba(44,63,89,1) 0%,rgba(67,95,132,1) 22%,rgba(76,108,153,1) 27%,rgba(76,108,153,1) 46%,rgba(72,102,140,1) 65%,rgba(16,23,33,1) 85%,rgba(0,0,0,1) 100%) /* Opera 11.10+ */
+      background -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(44,63,89,1)), color-stop(22%,rgba(67,95,132,1)), color-stop(27%,rgba(76,108,153,1)), color-stop(46%,rgba(76,108,153,1)), color-stop(65%,rgba(72,102,140,1)), color-stop(85%,rgba(16,23,33,1)), color-stop(100%,rgba(0,0,0,1))) /* Chrome,Safari4+ */
+      background -webkit-linear-gradient(top,  rgba(44,63,89,1) 0%,rgba(67,95,132,1) 22%,rgba(76,108,153,1) 27%,rgba(76,108,153,1) 46%,rgba(72,102,140,1) 65%,rgba(16,23,33,1) 85%,rgba(0,0,0,1) 100%) /* Chrome10+,Safari5.1+ */
+      background linear-gradient(to bottom,  rgba(44,63,89,1) 0%,rgba(67,95,132,1) 22%,rgba(76,108,153,1) 27%,rgba(76,108,153,1) 46%,rgba(72,102,140,1) 65%,rgba(16,23,33,1) 85%,rgba(0,0,0,1) 100%) /* W3C */
+      margin 0px auto 
+      position relative
+      text-align left
+      width 100%
+      z-index 5
+      
+      div
+        border-bottom 1px solid rgba(200,200,200,0.9)
+
+      #flashMessage
+        background-color rgba(255,255,255,0.8)
+        border-radius 10px
+        box-shadow 0px 0px 15px 10px rgba(16,16,40,0.9)
+        -moz-box-shadow 0px 0px 15px 10px rgba(255,255,40,0.9)
+        -webkit-box-shadow 0px 0px 15px 10px rgba(16,16,40,0.9)
+        color #225
+        font-size 18px
+        font-weight bold
+        height 60px
+        left 45%
+        padding 10px
+        position fixed
+        text-align center
+        top 45%
+        width 200px
+        z-index 1 
+        animation mensaje_flash 4s 1 forwards
+        -webkit-animation mensaje_flash 4s 1 forwards
+        -moz-animation mensaje_flash 4s 1 forwards
+        -ms-animation mensaje_flash 4s 1 forwards
+        -o-animation mensaje_flash 4s 1 forwards
+      
+      #layout_menu_inicio
+        display inline-block
+        float right
+        font-size 15px
+        position relative
+
+        nav
+          width auto!important
+          position relative!important
+          overflow visible
+          top 0px
+
+          ul
+            list-style none
+            background #bcbcbc
+            background -moz-linear-gradient(top,  #bcbcbc 0%, #efefef 50%, #bcbcbc 100%)
+            background -webkit-gradient(linear, left top, left bottom, color-stop(0%,#bcbcbc), color-stop(50%,#efefef), color-stop(100%,#bcbcbc))
+            background -webkit-linear-gradient(top,  #bcbcbc 0%,#efefef 50%,#bcbcbc 100%)
+            background -o-linear-gradient(top,  #bcbcbc 0%,#efefef 50%,#bcbcbc 100%)
+            background -ms-linear-gradient(top,  #bcbcbc 0%,#efefef 50%,#bcbcbc 100%)
+            background linear-gradient(to bottom,  #bcbcbc 0%,#efefef 50%,#bcbcbc 100%)
+
+            li
+              border-left 1px solid rgba(34,34,102,0.6)
+              border-right 1px solid rgba(34,34,102,0.6)
+              display inline-block
+              margin 0px -2px
+              z-index 2
+              padding 0px!important
+
+              a
+                color #226
+                cursor pointer
+                display block
+                font-size 15px
+                padding 12px 10px
+                z-index 2
+
+                &:hover 
+                  background    #fff 
+                  background #324664
+                  background -moz-linear-gradient(top,  #324664 0%, #3f587d 11%, #47648e 21%, #3e587d 32%, #374d6c 39%, #101721 68%, #05070b 79%, #000000 86%, #000000 100%)
+                  background -ms-linear-gradient(top,  #324664 0%,#3f587d 11%,#47648e 21%,#3e587d 32%,#374d6c 39%,#101721 68%,#05070b 79%,#000000 86%,#000000 100%)
+                  background -o-linear-gradient(top,  #324664 0%,#3f587d 11%,#47648e 21%,#3e587d 32%,#374d6c 39%,#101721 68%,#05070b 79%,#000000 86%,#000000 100%)
+                  background -webkit-gradient(linear, left top, left bottom, color-stop(0%,#324664), color-stop(11%,#3f587d), color-stop(21%,#47648e), color-stop(32%,#3e587d), color-stop(39%,#374d6c), color-stop(68%,#101721), color-stop(79%,#05070b), color-stop(86%,#000000), color-stop(100%,#000000))
+                  background -webkit-linear-gradient(top,  #324664 0%,#3f587d 11%,#47648e 21%,#3e587d 32%,#374d6c 39%,#101721 68%,#05070b 79%,#000000 86%,#000000 100%)
+                  background linear-gradient(to bottom,  #324664 0%,#3f587d 11%,#47648e 21%,#3e587d 32%,#374d6c 39%,#101721 68%,#05070b 79%,#000000 86%,#000000 100%)
+                  color #eee 
+
+        #logo_skew_left
+          display inline-block
+          background #bcbcbc
+          background -moz-linear-gradient(top,  #bcbcbc 0%, #efefef 50%, #bcbcbc 100%)
+          background -webkit-gradient(linear, left top, left bottom, color-stop(0%,#bcbcbc), color-stop(50%,#efefef), color-stop(100%,#bcbcbc))
+          background -webkit-linear-gradient(top,  #bcbcbc 0%,#efefef 50%,#bcbcbc 100%)
+          background -o-linear-gradient(top,  #bcbcbc 0%,#efefef 50%,#bcbcbc 100%)
+          background -ms-linear-gradient(top,  #bcbcbc 0%,#efefef 50%,#bcbcbc 100%)
+          background linear-gradient(to bottom,  #bcbcbc 0%,#efefef 50%,#bcbcbc 100%)
+          border-bottom #000
+          padding 12px 0px
+          margin 0px
+          position absolute
+          left -9px
+          -webkit-transform skew(200deg, 0deg)
+          top 0px
+          vertical-align top
+          width 20px
+          height auto!important
+
+          &:hover
+            background #bcbcbc
+            background -moz-linear-gradient(top,  #bcbcbc 0%, #efefef 50%, #bcbcbc 100%)!important
+            background -webkit-gradient(linear, left top, left bottom, color-stop(0%,#bcbcbc), color-stop(50%,#efefef), color-stop(100%,#bcbcbc))!important
+            background -webkit-linear-gradient(top,  #bcbcbc 0%,#efefef 50%,#bcbcbc 100%)!important
+            background -o-linear-gradient(top,  #bcbcbc 0%,#efefef 50%,#bcbcbc 100%)!important
+            background -ms-linear-gradient(top,  #bcbcbc 0%,#efefef 50%,#bcbcbc 100%)!important
+            background linear-gradient(to bottom,  #bcbcbc 0%,#efefef 50%,#bcbcbc 100%)!important
+
+        #primer_a_menu_inicio 
+
+          a
+            padding-left 15px
+
+          &:hover 
+
+            #logo_skew_left
+              background: #fff; 
+              background: #324664; /* Old browsers */
+              background: -moz-linear-gradient(top,  #324664 0%, #3f587d 11%, #47648e 21%, #3e587d 32%, #374d6c 39%, #101721 68%, #05070b 79%, #000000 86%, #000000 100%); /* FF3.6+ */
+              background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#324664), color-stop(11%,#3f587d), color-stop(21%,#47648e), color-stop(32%,#3e587d), color-stop(39%,#374d6c), color-stop(68%,#101721), color-stop(79%,#05070b), color-stop(86%,#000000), color-stop(100%,#000000)); /* Chrome,Safari4+ */
+              background: -webkit-linear-gradient(top,  #324664 0%,#3f587d 11%,#47648e 21%,#3e587d 32%,#374d6c 39%,#101721 68%,#05070b 79%,#000000 86%,#000000 100%); /* Chrome10+,Safari5.1+ */
+              background: -o-linear-gradient(top,  #324664 0%,#3f587d 11%,#47648e 21%,#3e587d 32%,#374d6c 39%,#101721 68%,#05070b 79%,#000000 86%,#000000 100%); /* Opera 11.10+ */
+              background: -ms-linear-gradient(top,  #324664 0%,#3f587d 11%,#47648e 21%,#3e587d 32%,#374d6c 39%,#101721 68%,#05070b 79%,#000000 86%,#000000 100%); /* IE10+ */
+              background: linear-gradient(to bottom,  #324664 0%,#3f587d 11%,#47648e 21%,#3e587d 32%,#374d6c 39%,#101721 68%,#05070b 79%,#000000 86%,#000000 100%); /* W3C */
+      
+      #layout_usuario
+        margin-right: 5px;        
+        color: #ddd;
+        display: inline-block;
+        float: right;
+        padding: 7px;
+        z-index: 2;
+
+        a
+          display: inline-block;
+          margin: 0px;
+          vertical-align: middle;
+        
+          img
+            border: 1px solid #aaa;
+            border-radius: 50%;
+
+            &:hover
+              -moz-box-shadow: 0px 0px 15px 1px #ddd;
+              -webkit-box-shadow: 0px 0px 15px 1px #ddd;
+        
+        #salir
+          background-color: #fff;
+          border-radius: 50%;
+          color: #b22;
+          display: inline-block;
+          font-family: icomoon;
+          font-size:24px; 
+          margin-left: 3px;
+          padding: 1px 2px;
+          text-decoration: none;
+          -moz-box-shadow: 0px 0px 1px 2px #666;
+          -webkit-box-shadow: 0px 0px 1px 2px #666;
+          transition:all 0.2s linear;
+
+          &:hover
+            color: #fff;
+            background-color: #a22;
+            -webkit-box-shadow: 0px 0px 5px 2px #666;
+            -moz-box-shadow: 0px 0px 1px 2px #666;
+
+      #logo
+        position relative
+        display inline-block
+        text-align left
+        vertical-align top
+        background -moz-linear-gradient(top,  #bcbcbc 0%, #efefef 50%, #bcbcbc 100%)
+        background -webkit-gradient(linear, left top, left bottom, color-stop(0%,#bcbcbc), color-stop(50%,#efefef), color-stop(100%,#bcbcbc))
+        background -webkit-linear-gradient(top,  #bcbcbc 0%,#efefef 50%,#bcbcbc 100%)
+        background -o-linear-gradient(top,  #bcbcbc 0%,#efefef 50%,#bcbcbc 100%)
+        background -ms-linear-gradient(top,  #bcbcbc 0%,#efefef 50%,#bcbcbc 100%)
+        background linear-gradient(to bottom,  #bcbcbc 0%,#efefef 50%,#bcbcbc 100%)
+        
+        figure
+          display: inline-block;
+          
+          figcaption
+            color: #eee;
+            display: inline-block;
+            font-family: Bodoni MT Black;
+            font-size: 28px;
+            font-style: italic;
+            font-weight: 900;
+            line-height: 17px;
+            margin: 0px 15px 0px 0px;
+            padding: 10px 0px;
+            text-shadow: 0px 0px 8px #000;
+            vertical-align: top;
+
+          img
+            display: inline-block;
+            margin: 4px 0px 1px 5px;
+            transition:all 1s linear;
+
+            &:hover
+              transform: rotate(380deg);
+              -o-transform: rotate(380deg);
+              -moz-transform: rotate(380deg);
+              -webkit-transform: rotate(380deg);
+        
+        #logo_skew_right
+          -webkit-transform:skew(340deg, 0deg);
+          background: #bcbcbc; /* Old browsers */
+          background: -moz-linear-gradient(top,  #bcbcbc 0%, #efefef 50%, #bcbcbc 100%); /* FF3.6+ */
+          background: -ms-linear-gradient(top,  #bcbcbc 0%,#efefef 50%,#bcbcbc 100%); /* IE10+ */
+          background: -o-linear-gradient(top,  #bcbcbc 0%,#efefef 50%,#bcbcbc 100%); /* Opera 11.10+ */
+          background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#bcbcbc), color-stop(50%,#efefef), color-stop(100%,#bcbcbc)); /* Chrome,Safari4+ */
+          background: -webkit-linear-gradient(top,  #bcbcbc 0%,#efefef 50%,#bcbcbc 100%); /* Chrome10+,Safari5.1+ */
+          background: linear-gradient(to bottom,  #bcbcbc 0%,#efefef 50%,#bcbcbc 100%); /* W3C */
+          display: inline-block;
+          font-size: 28px;
+          font-style: italic;
+          font-weight: 900;
+          line-height: 17px;
+          margin: 0px;
+          padding: 12px 0px 12px 0px ;
+          position: absolute;
+          right: -10px;
+          top: 0px;
+          vertical-align: top;
+          width: 20px;
+
+      .layout_title
+        display table
+        height 42px
+        min-width 280px
+        position absolute
+        text-align center
+        top 0px
+        width 100%
+        z-index -1
+
+        h1
+          color: #fff;
+          display: table-cell;
+          font-size: 18px;
+          line-height: 17px;
+          padding-left:225px;
+          padding-right: 90px;
+          text-shadow: 0px 0px 8px #000;
+          vertical-align: middle;
+
+      .layout_titleLogout
+        display table
+        height 42px
+        min-width 280px !important
+        position absolute
+        text-align center
+        top 0px
+        width 100%
+        z-index -1
+
+        h1
+          color #fff
+          display table-cell
+          font-size 18px
+          line-height 17px
+          padding-left 225px
+          padding-right 200px
+          text-shadow 0px 0px 8px #000
+          vertical-align middle
+    
+    div[class='input select']
+      padding: 0px!important;
+
+    input[type='text']
+      border: 1px solid #324664;
+
+    nav
+      background: #fff;
+      bottom: 29px;
+      height        :auto;
+      left: 0px;
+      opacity: 1;
+      overflow: auto;
+      position: absolute;
+      text-align: center;
+      top: 40px;
+      width         :110px;
+      z-index: 2;
+      transition:all 0.3s linear;
+      -moz-transition:all 0.3s linear;
+      -webkit-transition:all 0.3s linear;
+      
+      a
+        color: #fff;
+        display: block;
+        font-size: 12px;
+        text-decoration: none !important;
+
+        span
+          font-family: icomoon;
+          font-size: 35px;
+          margin: 0 auto;
+          text-align: center;
+          background #aaa
+          padding 10px
+          border-radius 50%
+
+        .titulo
+          background: rgba(255,255,255,0.9);
+          border-radius: 50%;
+          bottom: 10px;
+          font-size: 14px;
+          left: 0px;
+          opacity: 0;
+          padding: 5px 2px;
+          position: absolute;
+          right:0px;
+
+        &:before
+          font-size: 50px;
+          position: relative;
+          text-decoration: none !important;
+
+        &:hover .titulo
+          color: #225;
+          background rgba(255,255,255,0.8)
+          opacity: 1;
+
+      div
+        display: table;
+        height: 100%; 
+        text-align: center; 
+        width: 100%; 
+
+      ul
+        display: table-cell;
+        list-style: none;
+        vertical-align:middle;
+        
+        li
+          margin: 15px 0px;
+          text-align: center;
+          padding: 5px;
+          position: relative;
+          
+          &:hover span
+            background-color #225
+            color #fff
+
+          div
+            
+            a
+              color: #337;
+              font-size: 12px !important;
+      
+      #lista
+        background-color: #000;
+        color: #fff;
+        display: none;
+        font-size: 14px;
+        padding: 0px 0px 6px 0px;
+        text-align: center;
+    
+    select
+      min-width: 170px;
+      background-color: #fff;
+      color: #000;
+      border: 1px solid #324664;
+      font-size: 14px !important;
+
+      option
+        color: #000;
+
+        &:hover
+          background-color: #324664!important;
+          color: #ddd!important;
+
+    .layout_contenido
+      background rgba(255,255,255,0.9)
+      border-left 0px
+      border-right 0px
+      bottom 30px
+      height auto
+      left 110px
+      margin 0 auto
+      overflow auto
+      padding 25px 2%
+      position absolute
+      right 0px
+      top 43px
+      vertical-align top
+      width auto
+
+      table
+        
+        div
+          margin: 0 auto; 
+          width: auto;
+
+      .panel_frame
+        margin 0 auto
+        min-width 250px
+
+        .panel_internal
+          border 1px solid #2f486e
+          border-top 3px solid #1e71b8
+          padding 10px
+
+          .crud
+            border 1px solid #000
+            border-collapse separate
+            border-radius 0.3em
+            border-spacing 0px 0px
+            box-shadow 5px 5px 11px rgba(0,0,105,0.4)
+            -moz-box-shadow 5px 5px 11px rgba(0,0,105,0.4)
+            -webkit-box-shadow 5px 5px 11px rgba(0,0,105,0.4)
+            display block
+            margin 0 auto
+            overflow visible
+            
+            .back
+              position absolute
+              top 2px 
+              left -5px
+              width 40px
+
+            .crud_fila_paginacion
+              background -moz-linear-gradient(top,  rgba(165,165,165,1) 0%, rgba(239,239,239,1) 50%, rgba(165,165,165,1) 100%)
+              background -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(165,165,165,1)), color-stop(50%,rgba(239,239,239,1)), color-stop(100%,rgba(165,165,165,1)))
+              background -webkit-linear-gradient(top,  rgba(165,165,165,1) 0%,rgba(239,239,239,1) 50%,rgba(165,165,165,1) 100%)
+              background -o-linear-gradient(top,  rgba(165,165,165,1) 0%,rgba(239,239,239,1) 50%,rgba(165,165,165,1) 100%)
+              background -ms-linear-gradient(top,  rgba(165,165,165,1) 0%,rgba(239,239,239,1) 50%,rgba(165,165,165,1) 100%)
+              background linear-gradient(to bottom,  rgba(165,165,165,1) 0%,rgba(239,239,239,1) 50%,rgba(165,165,165,1) 100%)
+              border-left solid 1px rgba(255,255,255,0.3)
+              border-radius 0px 0px 4px 4px
+              border-right solid 1px rgba(255,255,255,0.3)
+              border-top solid 1px rgba(255,255,255,0.3)
+              color #447
+              font-family tahoma, arial, verdana, sans-serif
+              font-size 0.9em
+              font-weight bold
+              padding 3px 0px 3px 0px
+              text-align center
+              display relative
+              
+              .actual
+                background-color #fff
+                border-bottom 3px solid #777
+                border-radius 0px !important
+                color #b22
+                display inline-block
+                margin 1px 0px 0px 1px
+                padding 0px 25px 4px 25px
+                text-decoration none
+                transition all 0.2s linear
+              
+              span[class='prev']
+                margin 0px -5px 0px 0px
+
+                a
+                  background-color #fff;
+                  border-bottom 3px solid #777
+                  border-radius 50% 0px 0px 50%
+                  color: #b22;
+                  display inline-block
+                  font-weight 900
+                  margin 0px
+                  padding 0px 20px 4px 10px
+                  text-decoration none
+                  transition:all 0.2s linear;
+
+                a:hover
+                  color: #fff;
+                  background-color: #a22;
+                  -webkit-box-shadow: 0px 0px 5px 1px #666;
+                  -moz-box-shadow: 0px 0px 5px 1px #666;
+
+              span[class='next']
+                margin 0px 0px 0px -5px
+
+                a
+                  background-color #fff;
+                  border-bottom 3px solid #777
+                  border-radius 0px 50% 50% 0px
+                  color: #b22;
+                  display inline-block
+                  font-weight 900
+                  margin 0px
+                  padding 0px 10px 4px 20px
+                  text-decoration none
+                  transition all 0.2s linear
+
+                a:hover
+                  color #fff
+                  background-color #a22;
+                  -webkit-box-shadow 0px 0px 5px 1px #666
+                  -moz-box-shadow 0px 0px 5px 1px #666
+
+              span[class='prev disabled']
+                background-color #fff
+                border-bottom 3px solid #777
+                border-radius  50% 0px 0px 50%
+                color #fff
+                display inline-block
+                font-weight 900
+                margin 0px -5px 0px 0px
+                padding 0px 10px 4px 20px
+
+              span[class='next disabled']
+                background-color #fff
+                border-bottom 3px solid #777
+                border-radius 0px 50% 50% 0px
+                color #fff
+                display inline-block
+                font-weight 900
+                margin 0px 0px 0px -5px
+                padding 0px 10px 4px 20px
+
+            .crud_fila_principal
+              background -moz-linear-gradient(top, #324664 0%, #3f587d 11%, #47648e 21%, #3e587d 32%, #374d6c 39%, #101721 68%, #05070b 79%, #000 86%, #000 100%)
+              background -ms-linear-gradient(top, #324664 0%, #3f587d 11%, #47648e 21%, #3e587d 32%, #374d6c 39%, #101721 68%, #05070b 79%, #000 86%, #000 100%)
+              background -o-linear-gradient(top, #324664 0%, #3f587d 11%, #47648e 21%, #3e587d 32%, #374d6c 39%, #101721 68%, #05070b 79%, #000 86%, #000 100%)
+              background -webkit-gradient(linear, left top, left bottom, color-stop(0%, #324664), color-stop(11%, #3f587d), color-stop(21%, #47648e), color-stop(32%, #3e587d), color-stop(39%, #374d6c), color-stop(68%, #101721), color-stop(79%, #05070b), color-stop(86%, #000), color-stop(100%, #000))
+              background -webkit-linear-gradient(top, #324664 0%, #3f587d 11%, #47648e 21%, #3e587d 32%, #374d6c 39%, #101721 68%, #05070b 79%, #000 86%, #000 100%)
+              background linear-gradient(to bottom, #324664 0%, #3f587d 11%, #47648e 21%, #3e587d 32%, #374d6c 39%, #101721 68%, #05070b 79%, #000 86%, #000 100%)
+              border-bottom solid 1px #000
+              border-left solid 1px rgba(255,255,255,0.3)
+              border-radius 3px 3px 0px 0px
+              border-right solid 1px rgba(255,255,255,0.3)
+              border-top solid 1px rgba(255,255,255,0.3)
+              color #fff
+              position relative
+              font-family tahoma, arial, verdana, sans-serif
+              font-size 15px
+              font-weight bold
+              text-align center
+              min-height 26px
+              
+              .div_1
+                left 10px
+                position absolute
+
+              .div_2
+                position absolute
+                right 30px
+
+              h2
+                display inline-block
+                padding-left 10px
+                position relative
+                top 5px
+                width 100%
+
+                div
+                  display inline-block
+
+                input
+                  height 20px
+                  position relative
+              
+              span,label
+                display inline-block
+                vertical-align middle
+                padding 0px
+
+                img,div
+                  margin 0px
+                  vertical-align top
+              
+              .principal_titulo
+                margin 2px 20px 7px 30px
+
+            .crud_fila_secundaria
+              background rgba(174, 198, 218,0.5);
+              border-bottom solid 1px rgba(255,255,255,0.3)
+              border-left solid 1px rgba(255,255,255,0.3)
+              border-radius 0px 0px 3px 3px
+              border-right solid 1px rgba(255,255,255,0.3)
+              min-height 200px
+              padding 5px 5px 5px 5px
+              position relative
+              text-align center
+
+              figure
+                position absolute
+                top 8%
+                bottom 8% 
+                left 0px
+                right 0px
+                opacity 1
+                width auto
+              
+              .div_agregar_integrantes
+                background-color rgba(255,255,255,0.6)
+                border 1px solid #aaa
+                border-radius 5px 5px 0px 0px
+                display block
+                margin 5px
+                padding-bottom 5px
+
+                .contenedor_integrantes
+                  display block
+                  width 100%
+  
+                .div_buscar_interventor
+                  display inline-block
+                  margin 0 5px
+
+                  .icono_buscar_interventores
+                    margin-bottom -4px
+                    display inline-block
+                
+                .form_interventores
+                  margin-top -9px
+                  padding 5px 0px
+                  border-bottom 2px solid #777
+                  background-color rgba(0,0,0,0.4)
+
+                .relacion_integrante
+                  background rgb(165,165,165);
+                  background -moz-linear-gradient(top,  rgba(165,165,165,1) 0%, rgba(239,239,239,1) 50%, rgba(165,165,165,1) 100%)
+                  background -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(165,165,165,1)), color-stop(50%,rgba(239,239,239,1)), color-stop(100%,rgba(165,165,165,1)))
+                  background -webkit-linear-gradient(top,  rgba(165,165,165,1) 0%,rgba(239,239,239,1) 50%,rgba(165,165,165,1) 100%)
+                  background -o-linear-gradient(top,  rgba(165,165,165,1) 0%,rgba(239,239,239,1) 50%,rgba(165,165,165,1) 100%)
+                  background -ms-linear-gradient(top,  rgba(165,165,165,1) 0%,rgba(239,239,239,1) 50%,rgba(165,165,165,1) 100%)
+                  background linear-gradient(to bottom,  rgba(165,165,165,1) 0%,rgba(239,239,239,1) 50%,rgba(165,165,165,1) 100%)
+                  border-radius 3px 3px 0px 0px
+                  color #555
+                  display block
+                  font-weight 900
+                  margin-bottom 10px
+                  padding 2px 0px 2px 0px
+                  position relative
+                  width 100%
+                  
+                  .interventor_acciones:hover .lista_agregar_interventor
+                    opacity 1
+                    left 55px
+                    
+                  .lista_agregar_interventor
+                    display inline-block
+                    position absolute
+                    left -100px
+                    top 1px
+                    color #7a0400
+                    background-color white
+                    border-radius 0px 5px 0px 0px
+                    opacity 1
+                    transition all 0.2s linear
+                    
+                    li
+                      display inline-block
+                      font-size 13px
+                      padding 3px 7px 4px 10px
+                      width 55px
+                      box-shadow 2px 2px 5px rgba(0,0,0,0.5)
+                      margin 0 auto
+                      position relative
+
+                      .submit_oculto
+                        position absolute
+                        top 0px
+                        left 0px
+                        width 100%
+                        height 100%
+                        opacity 0
+
+                    li:hover
+                      background-color rgba(180,180,180,1)
+                    
+                    .estudiante
+                      width 100px
+                      padding-right 30px
+
+                  #proyectoIcono
+                    background-color #7a0400
+                    border-radius 5px 0px 10px 0px
+                    box-shadow 2px 2px 2px rgba(0,0,0,0.8)
+                    color #fff
+                    font-size 30px
+                    left 0px
+                    padding 5px 15px
+                    position absolute
+                    text-shadow 0px 0px 20px rgba(0,0,0,1)
+                    top 0px
+                    width 30px
+                    z-index 1
+
+                .resultado_busqueda
+                  background-color rgba(255,255,255,0.6)
+                  box-shadow 0px 0px 30px rgba(255,255,255,0.6)
+                  color #7a0400
+                  font-size 25px
+                  margin 5px 15px 5px 15px
+      
+                #cargo_interventor
+                  position absolute
+                  top 0px
+
+              .div_integrantes
+                vertical-align top
+                border 1px solid #aaa
+                background-color rgba(255,255,255,0.6)
+                display inline-block
+                margin 5px
+                border-radius 5px 5px 0px 0px
+                
+                .contenedor_integrantes
+                  width 100%
+                  display block
+
+                .relacion_integrante
+                  background rgb(165,165,165);
+                  background -moz-linear-gradient(top,  rgba(165,165,165,1) 0%, rgba(239,239,239,1) 50%, rgba(165,165,165,1) 100%)
+                  background -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(165,165,165,1)), color-stop(50%,rgba(239,239,239,1)), color-stop(100%,rgba(165,165,165,1)))
+                  background -webkit-linear-gradient(top,  rgba(165,165,165,1) 0%,rgba(239,239,239,1) 50%,rgba(165,165,165,1) 100%)
+                  background -o-linear-gradient(top,  rgba(165,165,165,1) 0%,rgba(239,239,239,1) 50%,rgba(165,165,165,1) 100%)
+                  background -ms-linear-gradient(top,  rgba(165,165,165,1) 0%,rgba(239,239,239,1) 50%,rgba(165,165,165,1) 100%)
+                  background linear-gradient(to bottom,  rgba(165,165,165,1) 0%,rgba(239,239,239,1) 50%,rgba(165,165,165,1) 100%)
+                  color #555
+                  display block
+                  font-weight 900
+                  padding 2px 0px 2px 0px
+                  position relative
+                  width 100%
+                  border-radius 3px 3px 0px 0px
+
+                  #proyectoIcono
+                    background-color #7a0400
+                    border-radius 5px 0px 10px 0px
+                    box-shadow 2px 2px 2px rgba(0,0,0,0.8)
+                    color #fff
+                    font-size 30px
+                    left 0px
+                    padding 5px 15px
+                    position absolute
+                    text-shadow 0px 0px 20px rgba(0,0,0,1)
+                    top 0px
+                    width 30px
+                    z-index 1
+              
+              .descargar_plantilla
+                background: -moz-linear-gradient(top,  #600000 0%, #800000 50%, #600000 100%);
+                background: -ms-linear-gradient(top,  #600000 0%,#800000 50%,#600000 100%);
+                background: -o-linear-gradient(top,  #600000 0%,#800000 50%,#600000 100%);
+                background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#600000), color-stop(50%,#800000), color-stop(100%,#600000));
+                background: -webkit-linear-gradient(top,  #600000 0%,#800000 50%,#600000 100%);
+                background: linear-gradient(to bottom,  #600000 0%,#800000 50%,#600000 100%);
+                margin-top 50px
+                color #fff;
+                position relative
+                cursor pointer
+
+                span,a,strong
+                  display block
+                  padding 5px
+                  vertical-align middle
+                  font-size 18px 
+                  font-weight 900
+
+                &:hover a
+                  background -moz-linear-gradient(top,  rgba(165,165,165,1) 0%, rgba(239,239,239,1) 50%, rgba(165,165,165,1) 100%)
+                  background -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(165,165,165,1)), color-stop(50%,rgba(239,239,239,1)), color-stop(100%,rgba(165,165,165,1)))
+                  background -webkit-linear-gradient(top,  rgba(165,165,165,1) 0%,rgba(239,239,239,1) 50%,rgba(165,165,165,1) 100%)
+                  background -o-linear-gradient(top,  rgba(165,165,165,1) 0%,rgba(239,239,239,1) 50%,rgba(165,165,165,1) 100%)
+                  background -ms-linear-gradient(top,  rgba(165,165,165,1) 0%,rgba(239,239,239,1) 50%,rgba(165,165,165,1) 100%)
+                  background linear-gradient(to bottom,  rgba(165,165,165,1) 0%,rgba(239,239,239,1) 50%,rgba(165,165,165,1) 100%)
+                  color #722
+                    
+
+              .div_estandar_programa
+                background-color rgba(255,255,255,0.6)
+                border 1px solid #aaa
+                border-radius 5px 5px 0px 0px
+                display inline-block
+                margin 5px
+                position relative
+                vertical-align top
+
+                &:hover .ficha_acciones_estandar
+                  display block
+
+                .ficha_acciones_estandar
+                  background -moz-linear-gradient(top,  rgba(50,70,100,0.9) 0%, rgba(63,88,125,0.9) 11%, rgba(71,100,142,0.9) 21%, rgba(62,88,125,0.9) 32%, rgba(55,77,108,0.9) 39%, rgba(40,57,80,0.9) 50%, rgba(16,23,33,0.9) 68%, rgba(5,7,11,0.9) 79%, rgba(0,0,0,0.9) 86%, rgba(0,0,0,0.9) 100%)
+                  background -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(50,70,100,0.9)), color-stop(11%,rgba(63,88,125,0.9)), color-stop(21%,rgba(71,100,142,0.9)), color-stop(32%,rgba(62,88,125,0.9)), color-stop(39%,rgba(55,77,108,0.9)), color-stop(50%,rgba(40,57,80,0.9)), color-stop(68%,rgba(16,23,33,0.9)), color-stop(79%,rgba(5,7,11,0.9)), color-stop(86%,rgba(0,0,0,0.9)), color-stop(100%,rgba(0,0,0,0.9)))
+                  background -webkit-linear-gradient(top,  rgba(50,70,100,0.9) 0%,rgba(63,88,125,0.9) 11%,rgba(71,100,142,0.9) 21%,rgba(62,88,125,0.9) 32%,rgba(55,77,108,0.9) 39%,rgba(40,57,80,0.9) 50%,rgba(16,23,33,0.9) 68%,rgba(5,7,11,0.9) 79%,rgba(0,0,0,0.9) 86%,rgba(0,0,0,0.9) 100%)
+                  background -o-linear-gradient(top,  rgba(50,70,100,0.9) 0%,rgba(63,88,125,0.9) 11%,rgba(71,100,142,0.9) 21%,rgba(62,88,125,0.9) 32%,rgba(55,77,108,0.9) 39%,rgba(40,57,80,0.9) 50%,rgba(16,23,33,0.9) 68%,rgba(5,7,11,0.9) 79%,rgba(0,0,0,0.9) 86%,rgba(0,0,0,0.9) 100%)
+                  background -ms-linear-gradient(top,  rgba(50,70,100,0.9) 0%,rgba(63,88,125,0.9) 11%,rgba(71,100,142,0.9) 21%,rgba(62,88,125,0.9) 32%,rgba(55,77,108,0.9) 39%,rgba(40,57,80,0.9) 50%,rgba(16,23,33,0.9) 68%,rgba(5,7,11,0.9) 79%,rgba(0,0,0,0.9) 86%,rgba(0,0,0,0.9) 100%)
+                  background linear-gradient(to bottom,  rgba(50,70,100,0.9) 0%,rgba(63,88,125,0.9) 11%,rgba(71,100,142,0.9) 21%,rgba(62,88,125,0.9) 32%,rgba(55,77,108,0.9) 39%,rgba(40,57,80,0.9) 50%,rgba(16,23,33,0.9) 68%,rgba(5,7,11,0.9) 79%,rgba(0,0,0,0.9) 86%,rgba(0,0,0,0.9) 100%)
+                  border-radius 0px 0px 0px 10px
+                  display none
+                  padding 5px
+                  float right
+                  z-index 1
+                  
+                  a
+                    display inline-block
+
+                .icono_izquierda_pequeño
+                  float left
+                  margin-left 2px
+                  font-size 18px
+
+                .programa
+                  background: -moz-linear-gradient(top,  #600000 0%, #800000 50%, #600000 100%);
+                  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#600000), color-stop(50%,#800000), color-stop(100%,#600000));
+                  background: -webkit-linear-gradient(top,  #600000 0%,#800000 50%,#600000 100%);
+                  background: -o-linear-gradient(top,  #600000 0%,#800000 50%,#600000 100%);
+                  background: -ms-linear-gradient(top,  #600000 0%,#800000 50%,#600000 100%);
+                  background: linear-gradient(to bottom,  #600000 0%,#800000 50%,#600000 100%);
+                  color #eee
+                  display block
+                  font-weight 900
+                  padding 2px 5px 2px 5px
+                  position relative
+                  width auto
+                  border-radius 3px 3px 0px 0px
+
+              .estandar
+                background -moz-linear-gradient(top,  #bcbcbc 0%, #efefef 50%, #bcbcbc 100%)
+                background -webkit-gradient(linear, left top, left bottom, color-stop(0%,#bcbcbc), color-stop(50%,#efefef), color-stop(100%,#bcbcbc))
+                background -webkit-linear-gradient(top,  #bcbcbc 0%,#efefef 50%,#bcbcbc 100%)
+                background -o-linear-gradient(top,  #bcbcbc 0%,#efefef 50%,#bcbcbc 100%)
+                background -ms-linear-gradient(top,  #bcbcbc 0%,#efefef 50%,#bcbcbc 100%)
+                background linear-gradient(to bottom,  #bcbcbc 0%,#efefef 50%,#bcbcbc 100%)
+                color #222
+                display block
+                font-weight 900
+                padding 2px 0px 2px 0px
+                position relative
+                width 100%
+                border-radius 3px 3px 0px 0px
+
+              .ficha_add
+                background-color #fff
+                display block
+             
+                div
+                  display block
+                  
+                  input[type="file"]
+                    width 358px
+
+                  select,span,input,div
+                    display inline-block
+
+                .cargando
+                  color #447
+                  font-size 25px
+                  font-weight 900
+                
+              .fichaAgregar
+                background-color rgba(255,255,255,0.8)
+                border-image linear-gradient(90deg, transparent, #000 50%, transparent) 1 100%
+                -moz-border-image -moz-linear-gradient(90deg, transparent, #000 50%, transparent) 1 100%
+                -o-border-image -o-linear-gradient(90deg, transparent, #000 50%, transparent) 1 100%
+                -webkit-border-image -webkit-linear-gradient(90deg, transparent, #000 50%, transparent) 1 100%
+                border-left-width 2px
+                border-radius 5px
+                border-right-width 2px
+                box-shadow 0px 0px 30px 5px rgba(255,255,255,0.9)
+                -moz-box-shadow 0px 0px 30px 5px rgba(255,255,255,0.9)
+                -webkit-box-shadow 0px 0px 30px 5px rgba(255,255,255,0.9)
+                display block
+                margin 5px
+                min-width 200px
+                padding 5px
+                position relative
+                
+                .consultar_img
+                  position static
+                  margin-bottom 20px
+
+                .entradas
+                  background-color rgba(255,255,255,0)
+                  display block
+                  max-width 400px
+
+                  div
+                    display block
+                    margin-bottom 3px
+                    overflow hidden
+                    text-align left
+                    vertical-align  top
+                    
+                    div
+                      display inline-block
+                      position relative
+                      vertical-align  top
+                    
+                    div:first-child
+                      background-color rgba(255,255,255,0.9);
+                      float left
+                      min-width 121px
+                    
+                      b
+                        padding-left 5px
+
+                    div:last-child
+                      float right
+
+                      textarea
+                        box-sizing border-box
+                        -moz-box-sizing border-box
+                        -webkit-box-sizing border-box
+                        font-size 14px
+                        height auto
+                        width 100%
+                    
+                    .divTextarea
+                      display block
+                      height 100%
+                      position relative
+                      text-align left
+                      width 100%
+                        
+                    div[class="input file"]
+                      background #225
+                      border 1px solid #225
+                      cursor pointer
+                      height 20px
+                      overflow hidden
+                      position relative
+                      width 180px
+
+                      .inputFile
+                        border 0.9em solid transparent
+                        color white
+                        cursor pointer
+                        font-size 0.8em
+                        height 50px
+                        margin 0
+                        opacity 1
+                        outline 0
+                        padding 0
+                        position absolute
+                        right 2px
+                        top -12px
+                      
+                    .inputCorto
+                      width 160px
+                      min-width 160px
+                  
+                  .div_doble
+                    text-align center
+                    display inline-block
+                    width 100%
+
+                    .div_left
+                      float left
+                    
+                    .div_right
+                      float right
+                  
+                  .input_unico
+                    text-align center
+                    display block
+                    width 100%
+
+                    select,div
+                      float none !important
+                      display block !important
+                      margin 0 auto
+              
+              .ficha_index
+                background-color rgba(255,255,255,0.6)
+                border-image linear-gradient(90deg, transparent, #000 50%, transparent) 1 100%
+                -moz-border-image -moz-linear-gradient(90deg, transparent, #000 50%, transparent) 1 100%
+                -o-border-image -o-linear-gradient(90deg, transparent, #000 50%, transparent) 1 100%
+                -webkit-border-image -webkit-linear-gradient(90deg, transparent, #000 50%, transparent) 1 100%
+                border-left-width 2px
+                border-radius 5px
+                border-right-width 2px
+                box-shadow 0px 0px 20px 5px rgba(255,255,255,0.9)
+                -moz-box-shadow 0px 0px 20px 5px rgba(255,255,255,0.9)
+                -webkit-box-shadow 0px 0px 20px 5px rgba(255,255,255,0.9)
+                display inline-block
+                position relative
+                margin 5px
+                width 200px
+                vertical-align top
+                overflow:hidden;
+
+                a
+                  text-decoration none
+
+                .informacion_proyecto
+                  min-height 200px
+                  background-color rgba(200,200,200,0.2)
+                  padding 0px 10px
+                  width 100%
+                  border-spacing initial
+
+                  .documento_iconos
+                    color azuloscuro
+                    font-size 45px
+
+                  .doc_index_aprobado
+                    color #fff;
+                    background: -moz-linear-gradient(top,  #006e00 0%, #00c800 50%, #006e00 100%);
+                    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#006e00), color-stop(50%,#00c800), color-stop(100%,#006e00));
+                    background: -webkit-linear-gradient(top,  #006e00 0%,#00c800 50%,#006e00 100%);
+                    background: -o-linear-gradient(top,  #006e00 0%,#00c800 50%,#006e00 100%);
+                    background: -ms-linear-gradient(top,  #006e00 0%,#00c800 50%,#006e00 100%);
+                    background: linear-gradient(to bottom,  #006e00 0%,#00c800 50%,#006e00 100%);
+                  
+                
+                  .doc_index_enproceso
+                    color #720;
+                    background: -moz-linear-gradient(top,  #e09d00 5%, #ffff00 50%, #e09d00 95%);
+                    background: -webkit-gradient(linear, left top, left bottom, color-stop(5%,#e09d00), color-stop(50%,#ffff00), color-stop(95%,#e09d00));
+                    background: -webkit-linear-gradient(top,  #e09d00 5%,#ffff00 50%,#e09d00 95%);
+                    background: -o-linear-gradient(top,  #e09d00 5%,#ffff00 50%,#e09d00 95%);
+                    background: -ms-linear-gradient(top,  #e09d00 5%,#ffff00 50%,#e09d00 95%);
+                    background: linear-gradient(to bottom,  #e09d00 5%,#ffff00 50%,#e09d00 95%);
+
+                  .doc_index_noaprobado
+                    background: -moz-linear-gradient(top,  #600000 0%, #800000 50%, #600000 100%);
+                    background: -ms-linear-gradient(top,  #600000 0%,#800000 50%,#600000 100%);
+                    background: -o-linear-gradient(top,  #600000 0%,#800000 50%,#600000 100%);
+                    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#600000), color-stop(50%,#800000), color-stop(100%,#600000));
+                    background: -webkit-linear-gradient(top,  #600000 0%,#800000 50%,#600000 100%);
+                    background: linear-gradient(to bottom,  #600000 0%,#800000 50%,#600000 100%);
+                    color #fff;
+                  
+                  td
+                    text-align center
+
+                  .estandar_vigencia_inicio 
+
+                    td
+                      border-bottom 3px solid #8f8 
+                    
+                  .estandar_vigencia_fin 
+                    margin-bottom 10px
+
+                    td
+                      border-bottom 3px solid #f55
+                      padding 0px
+
+                  .tr_border_bottom_blue
+                    margin-bottom 10px
+
+                    td
+                      border-bottom 3px solid #004
+                      padding 0px
+                      font-weight 900
+                    
+                    .azulOscuro
+                      color #004
+
+                    .icono_16px
+                      font-size 35px
+
+                  .titulo_estandar
+                    background #fff
+                    border 1px solid #999
+                    font-size 14px
+                    margin 20px 0px 0px 0px
+                    padding 3px
+                    white-space normal
+                
+                .form_oculto_cambiar
+                  display inline-block
+                  position absolute
+                  left 0px
+                  top 0px
+
+                .itemsDocumento
+                  border-spacing: initial
+                  margin 0 5px
+                  border 1px solid #aaa
+                  border-radius 5px 5px 0px 0px
+                  display inline-block
+                  width auto
+                  // Tabla para la muestra de items que componen un documento
+                  .contenidoItemsDocumento
+                    color #333
+                    position relative
+                    overflow auto
+                    width auto
+                    display block
+                    text-align left
+
+                    div
+                      display inline-block
+                      font-weight 400
+                      border-right 1px solid rgba(200,200,200,0.5)
+                      border-left 1px solid rgba(200,200,200,0.5)
+                      border-bottom 1px solid rgba(200,200,200,0.4)
+                      margin 0px
+                      padding 1px 5px
+                      font-size 15px
+
+                      &:first-child
+                        border-left 0px solid
+
+                      &:last-child
+                        border-right 0px solid
+
+                    .orden
+                      width 45px
+                    
+                    .item
+                      width auto
+                      border-left 1px solid rgba(0,0,0,0)
+                      border-right 1px solid rgba(0,0,0,0)
+
+                    .caracteres
+                      width 90px
+                      float right 
+
+                    .lineas
+                      width 60px 
+                      float right
+                      
+
+                  .tituloItemsDocumento
+                    background: -moz-linear-gradient(top,  #600000 0%, #800000 50%, #600000 100%);
+                    background: -ms-linear-gradient(top,  #600000 0%,#800000 50%,#600000 100%);
+                    background: -o-linear-gradient(top,  #600000 0%,#800000 50%,#600000 100%);
+                    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#600000), color-stop(50%,#800000), color-stop(100%,#600000));
+                    background: -webkit-linear-gradient(top,  #600000 0%,#800000 50%,#600000 100%);
+                    background: linear-gradient(to bottom,  #600000 0%,#800000 50%,#600000 100%);
+                    color #fff
+                    position relative
+                    overflow auto
+                    display block
+                    text-align left
+
+                    div
+                      display inline-block
+                      font-weight 900
+                      border-right 1px solid rgba(200,200,200,0.5)
+                      border-left 1px solid rgba(200,200,200,0.5)
+                      margin 0px
+                      padding 1px 5px
+
+                      &:first-child
+                        border-radius 4px 0px 0px 0px
+                        border-left 0px solid
+
+                      &:last-child
+                        border-radius 0px 4px 0px 0px
+                        border-right 0px solid
+
+                    .orden
+                      width 45px
+                    
+                    .item
+                      width auto
+                      border-left 1px solid rgba(0,0,0,0)
+                      border-right 1px solid rgba(0,0,0,0)
+                      text-align center
+
+                    .caracteres
+                      width 90px
+                      float right
+
+                    .lineas
+                      width 60px 
+                      float right
+
+                .submit_oculto_cambiar
+                  opacity 0!important
+                  width 30px!important
+                  height 35px
+
+                .ficha_acciones
+                  background -moz-linear-gradient(top,  rgba(50,70,100,0.9) 0%, rgba(63,88,125,0.66) 11%, rgba(71,100,142,0.62) 21%, rgba(62,88,125,0.57) 32%, rgba(55,77,108,0.54) 39%, rgba(40,57,80,0.5) 50%, rgba(16,23,33,0.57) 68%, rgba(5,7,11,0.61) 79%, rgba(0,0,0,0.64) 86%, rgba(0,0,0,0.9) 100%)
+                  background -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(50,70,100,0.9)), color-stop(11%,rgba(63,88,125,0.66)), color-stop(21%,rgba(71,100,142,0.62)), color-stop(32%,rgba(62,88,125,0.57)), color-stop(39%,rgba(55,77,108,0.54)), color-stop(50%,rgba(40,57,80,0.5)), color-stop(68%,rgba(16,23,33,0.57)), color-stop(79%,rgba(5,7,11,0.61)), color-stop(86%,rgba(0,0,0,0.64)), color-stop(100%,rgba(0,0,0,0.9)))
+                  background -webkit-linear-gradient(top,  rgba(50,70,100,0.9) 0%,rgba(63,88,125,0.66) 11%,rgba(71,100,142,0.62) 21%,rgba(62,88,125,0.57) 32%,rgba(55,77,108,0.54) 39%,rgba(40,57,80,0.5) 50%,rgba(16,23,33,0.57) 68%,rgba(5,7,11,0.61) 79%,rgba(0,0,0,0.64) 86%,rgba(0,0,0,0.9) 100%)
+                  background -o-linear-gradient(top,  rgba(50,70,100,0.9) 0%,rgba(63,88,125,0.66) 11%,rgba(71,100,142,0.62) 21%,rgba(62,88,125,0.57) 32%,rgba(55,77,108,0.54) 39%,rgba(40,57,80,0.5) 50%,rgba(16,23,33,0.57) 68%,rgba(5,7,11,0.61) 79%,rgba(0,0,0,0.64) 86%,rgba(0,0,0,0.9) 100%)
+                  background -ms-linear-gradient(top,  rgba(50,70,100,0.9) 0%,rgba(63,88,125,0.66) 11%,rgba(71,100,142,0.62) 21%,rgba(62,88,125,0.57) 32%,rgba(55,77,108,0.54) 39%,rgba(40,57,80,0.5) 50%,rgba(16,23,33,0.57) 68%,rgba(5,7,11,0.61) 79%,rgba(0,0,0,0.64) 86%,rgba(0,0,0,0.9) 100%)
+                  background linear-gradient(to bottom,  rgba(50,70,100,0.9) 0%,rgba(63,88,125,0.66) 11%,rgba(71,100,142,0.62) 21%,rgba(62,88,125,0.57) 32%,rgba(55,77,108,0.54) 39%,rgba(40,57,80,0.5) 50%,rgba(16,23,33,0.57) 68%,rgba(5,7,11,0.61) 79%,rgba(0,0,0,0.64) 86%,rgba(0,0,0,0.9) 100%)
+                  border-radius 0px 0px 0px 10px
+                  display none
+                  padding 5px
+                  position absolute
+                  right 0px
+                  top 0px
+                  
+                  a
+                    display inline-block
+
+                .ficha_datos
+                  background #bcbcbc
+                  background -moz-linear-gradient(top, #bcbcbc 0%, #efefef 50%, #bcbcbc 100%)
+                  background -webkit-gradient(linear, left top, left bottom, color-stop(0%, #bcbcbc), color-stop(50%, #efefef), color-stop(100%, #bcbcbc))
+                  background -webkit-linear-gradient(top, #bcbcbc 0%, #efefef 50%, #bcbcbc 100%)
+                  background -o-linear-gradient(top, #bcbcbc 0%, #efefef 50%, #bcbcbc 100%)
+                  background -ms-linear-gradient(top, #bcbcbc 0%, #efefef 50%, #bcbcbc 100%)
+                  background linear-gradient(to bottom, #bcbcbc 0%, #efefef 50%, #bcbcbc 100%)
+                  border-top 1px solid #ccc
+                  min-height 100px
+                  padding 5px
+                  text-align center
+
+                  span
+                    color #222
+                    font-size 14px
+                  
+                  table
+                    margin 0 auto
+                    width 100%
+                    text-align center !important
+
+                  .proyectos_ampliar
+                    overflow visible
+                    color #eee
+
+                    .informacion
+                      display block
+                      height 0px
+                      width 100%
+                      z-index 0
+                      transition all 0.2s linear
+                      opacity 0
+
+                      span
+                        color #eee
+
+                  .proyectos_ampliar:hover .informacion
+                      height auto
+                      opacity 1
+
+                figure
+                  position relative
+
+                #acciones_estandar
+                  top 23px
+
+                #datos_proyecto
+                  min-height 0px
+                  background: -moz-linear-gradient(top,  #600000 0%, #800000 50%, #600000 100%);
+                  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#600000), color-stop(50%,#800000), color-stop(100%,#600000));
+                  background: -webkit-linear-gradient(top,  #600000 0%,#800000 50%,#600000 100%);
+                  background: -o-linear-gradient(top,  #600000 0%,#800000 50%,#600000 100%);
+                  background: -ms-linear-gradient(top,  #600000 0%,#800000 50%,#600000 100%);
+                  background: linear-gradient(to bottom,  #600000 0%,#800000 50%,#600000 100%);
+
+                
+              .ficha_index:hover .ficha_datos
+                box-shadow 0px 0px 20px rgba(0,0,0,0.9)
+
+              .ficha_index:hover span
+               color #222
+
+              .ficha_index:hover .ficha_acciones
+                display block
+                background -moz-linear-gradient(top,  #324664 0%, #3f587d 11%, #47648e 21%, #3e587d 32%, #374d6c 39%, #101721 68%, #05070b 79%, #000000 86%, #000000 100%)
+                background -webkit-gradient(linear, left top, left bottom, color-stop(0%,#324664), color-stop(11%,#3f587d), color-stop(21%,#47648e), color-stop(32%,#3e587d), color-stop(39%,#374d6c), color-stop(68%,#101721), color-stop(79%,#05070b), color-stop(86%,#000000), color-stop(100%,#000000))
+                background -webkit-linear-gradient(top,  #324664 0%,#3f587d 11%,#47648e 21%,#3e587d 32%,#374d6c 39%,#101721 68%,#05070b 79%,#000000 86%,#000000 100%)
+                background -o-linear-gradient(top,  #324664 0%,#3f587d 11%,#47648e 21%,#3e587d 32%,#374d6c 39%,#101721 68%,#05070b 79%,#000000 86%,#000000 100%)
+                background -ms-linear-gradient(top,  #324664 0%,#3f587d 11%,#47648e 21%,#3e587d 32%,#374d6c 39%,#101721 68%,#05070b 79%,#000000 86%,#000000 100%)
+                background linear-gradient(to bottom,  #324664 0%,#3f587d 11%,#47648e 21%,#3e587d 32%,#374d6c 39%,#101721 68%,#05070b 79%,#000000 86%,#000000 100%)
+
+              .ficha_view
+                background-color rgba(255,255,255,0.6)
+                border-image linear-gradient(90deg, transparent, #000 50%, transparent) 1 100%
+                -moz-border-image -moz-linear-gradient(90deg, transparent, #000 50%, transparent) 1 100%
+                -o-border-image -o-linear-gradient(90deg, transparent, #000 50%, transparent) 1 100%
+                -webkit-border-image -webkit-linear-gradient(90deg, transparent, #000 50%, transparent) 1 100%
+                border-left-width 2px
+                border-radius 5px
+                border-right-width 2px
+                box-shadow 0px 0px 30px 5px rgba(255,255,255,0.9)
+                -moz-box-shadow 0px 0px 30px 5px rgba(255,255,255,0.9)
+                -webkit-box-shadow 0px 0px 30px 5px rgba(255,255,255,0.9)
+                display inline-block
+                margin 5px
+                max-width 500px
+
+                .ficha_acciones
+                  background  #fff 
+                  background -moz-linear-gradient(top,  rgba(50,70,100,0.9) 0%, rgba(63,88,125,0.66) 11%, rgba(71,100,142,0.62) 21%, rgba(62,88,125,0.57) 32%, rgba(55,77,108,0.54) 39%, rgba(40,57,80,0.5) 50%, rgba(16,23,33,0.57) 68%, rgba(5,7,11,0.61) 79%, rgba(0,0,0,0.64) 86%, rgba(0,0,0,0.9) 100%)
+                  background -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(50,70,100,0.9)), color-stop(11%,rgba(63,88,125,0.66)), color-stop(21%,rgba(71,100,142,0.62)), color-stop(32%,rgba(62,88,125,0.57)), color-stop(39%,rgba(55,77,108,0.54)), color-stop(50%,rgba(40,57,80,0.5)), color-stop(68%,rgba(16,23,33,0.57)), color-stop(79%,rgba(5,7,11,0.61)), color-stop(86%,rgba(0,0,0,0.64)), color-stop(100%,rgba(0,0,0,0.9)))
+                  background -webkit-linear-gradient(top,  rgba(50,70,100,0.9) 0%,rgba(63,88,125,0.66) 11%,rgba(71,100,142,0.62) 21%,rgba(62,88,125,0.57) 32%,rgba(55,77,108,0.54) 39%,rgba(40,57,80,0.5) 50%,rgba(16,23,33,0.57) 68%,rgba(5,7,11,0.61) 79%,rgba(0,0,0,0.64) 86%,rgba(0,0,0,0.9) 100%)
+                  background -o-linear-gradient(top,  rgba(50,70,100,0.9) 0%,rgba(63,88,125,0.66) 11%,rgba(71,100,142,0.62) 21%,rgba(62,88,125,0.57) 32%,rgba(55,77,108,0.54) 39%,rgba(40,57,80,0.5) 50%,rgba(16,23,33,0.57) 68%,rgba(5,7,11,0.61) 79%,rgba(0,0,0,0.64) 86%,rgba(0,0,0,0.9) 100%)
+                  background -ms-linear-gradient(top,  rgba(50,70,100,0.9) 0%,rgba(63,88,125,0.66) 11%,rgba(71,100,142,0.62) 21%,rgba(62,88,125,0.57) 32%,rgba(55,77,108,0.54) 39%,rgba(40,57,80,0.5) 50%,rgba(16,23,33,0.57) 68%,rgba(5,7,11,0.61) 79%,rgba(0,0,0,0.64) 86%,rgba(0,0,0,0.9) 100%)
+                  background linear-gradient(to bottom,  rgba(50,70,100,0.9) 0%,rgba(63,88,125,0.66) 11%,rgba(71,100,142,0.62) 21%,rgba(62,88,125,0.57) 32%,rgba(55,77,108,0.54) 39%,rgba(40,57,80,0.5) 50%,rgba(16,23,33,0.57) 68%,rgba(5,7,11,0.61) 79%,rgba(0,0,0,0.64) 86%,rgba(0,0,0,0.9) 100%)
+                  border-radius 0px 0px 0px 10px
+                  display none
+                  padding 5px
+                  position absolute
+                  right 0px
+                  top 0px
+                  
+                  a
+                    display inline-block
+
+                .ficha_datos
+                  background #bcbcbc
+                  background -moz-linear-gradient(top, #bcbcbc 0%, #efefef 50%, #bcbcbc 100%)
+                  background -webkit-gradient(linear, left top, left bottom, color-stop(0%, #bcbcbc), color-stop(50%, #efefef), color-stop(100%, #bcbcbc))
+                  background -webkit-linear-gradient(top, #bcbcbc 0%, #efefef 50%, #bcbcbc 100%)
+                  background -o-linear-gradient(top, #bcbcbc 0%, #efefef 50%, #bcbcbc 100%)
+                  background -ms-linear-gradient(top, #bcbcbc 0%, #efefef 50%, #bcbcbc 100%)
+                  background linear-gradient(to bottom, #bcbcbc 0%, #efefef 50%, #bcbcbc 100%)
+                  border-top 1px solid #ccc
+                  min-height 100px
+                  padding 5px
+                  text-align justify
+                  
+                  p
+                    text-align justify
+
+                  span
+                    color #222
+                    font-size 14px
+                  
+                  table
+                    text-align center !important
+
+                figure
+                  position relative
+                
+              .ficha_view:hover .ficha_datos
+                background #fff 
+                background #324664
+                background -moz-linear-gradient(top,  #324664 0%, #3f587d 11%, #47648e 21%, #3e587d 32%, #374d6c 39%, #101721 68%, #05070b 79%, #000000 86%, #000000 100%)
+                background -webkit-gradient(linear, left top, left bottom, color-stop(0%,#324664), color-stop(11%,#3f587d), color-stop(21%,#47648e), color-stop(32%,#3e587d), color-stop(39%,#374d6c), color-stop(68%,#101721), color-stop(79%,#05070b), color-stop(86%,#000000), color-stop(100%,#000000))
+                background -webkit-linear-gradient(top,  #324664 0%,#3f587d 11%,#47648e 21%,#3e587d 32%,#374d6c 39%,#101721 68%,#05070b 79%,#000000 86%,#000000 100%)
+                background -o-linear-gradient(top,  #324664 0%,#3f587d 11%,#47648e 21%,#3e587d 32%,#374d6c 39%,#101721 68%,#05070b 79%,#000000 86%,#000000 100%)
+                background -ms-linear-gradient(top,  #324664 0%,#3f587d 11%,#47648e 21%,#3e587d 32%,#374d6c 39%,#101721 68%,#05070b 79%,#000000 86%,#000000 100%)
+                background linear-gradient(to bottom,  #324664 0%,#3f587d 11%,#47648e 21%,#3e587d 32%,#374d6c 39%,#101721 68%,#05070b 79%,#000000 86%,#000000 100%)
+
+              .ficha_view:hover span,.ficha_view:hover p
+               color #ddd
+
+              .ficha_view:hover .ficha_acciones
+               display block
+              
+              .crud_fila_secundaria_contenido
+                border solid 1px #000
+                background rgba(255,255,255,0.9)
+                width 100%
+                border-collapse separate
+                border-spacing 0px 0px
+            
+              .crud_fila_secundaria_contenido_fila_primaria 
+                
+                th
+                  border-right solid 1px #000
+                  border-bottom solid 1px #000
+                  padding 5px 6px
+                  font normal 12px tahoma, arial, verdana, sans-serif
+                  background-color rgba(11,13,47,0.9)
+                  color #fff
+                  text-align left
+                  transition all 0.3s linear
+                  -webkit-transition all 0.3s linear
+                  -moz-transition all 0.3s linear
+
+                th:hover
+                  background-color #435775
+                 
+                  a
+                    padding 0px 80% 0px 0px
+                    color #fff
+                    text-decoration none
+                  
+                .th_id
+                  width 10px
+
+                .th_res
+                  min-width 80px
+
+              #fichaIndexInformacionGeneral
+                width auto
+                box-shadow:0px 0px 0px rgba(255,255,255,0)
+                margin:0px 0px
+
+                table
+                  min-width 240px
+
+              #fichaIndexProyecto
+                position relative
+                overflow visible
+
+                .ficha_datos
+                  min-height 150px
+
+                .proyectosIndex
+                  left 0px 
+                  position absolute
+                  top 0px
+
+              table
+
+            .submit
+              
+              input
+                background #324664
+                background -moz-linear-gradient(top, #324664 0%, #3f587d 11%, #47648e 21%, #3e587d 32%, #374d6c 39%, #101721 68%, #05070b 79%, #000 86%, #000 100%)
+                background -webkit-gradient(linear, left top, left bottom, color-stop(0%, #324664), color-stop(11%, #3f587d), color-stop(21%, #47648e), color-stop(32%, #3e587d), color-stop(39%, #374d6c), color-stop(68%, #101721), color-stop(79%, #05070b), color-stop(86%, #000), color-stop(100%, #000))
+                background -webkit-linear-gradient(top, #324664 0%, #3f587d 11%, #47648e 21%, #3e587d 32%, #374d6c 39%, #101721 68%, #05070b 79%, #000 86%, #000 100%)
+                background -o-linear-gradient(top, #324664 0%, #3f587d 11%, #47648e 21%, #3e587d 32%, #374d6c 39%, #101721 68%, #05070b 79%, #000 86%, #000 100%)
+                background -ms-linear-gradient(top, #324664 0%, #3f587d 11%, #47648e 21%, #3e587d 32%, #374d6c 39%, #101721 68%, #05070b 79%, #000 86%, #000 100%)
+                background linear-gradient(to bottom, #324664 0%, #3f587d 11%, #47648e 21%, #3e587d 32%, #374d6c 39%, #101721 68%, #05070b 79%, #000 86%, #000 100%)
+                border-radius 0px 0px 5px 5px
+                border-top 1px solid #fff
+                border 1px solid rgba(255,255,255,0)
+                color #ddd
+                margin -2px -1px -2px -1px
+                padding 10px
+                text-align center
+                transition all 0.3s linear
+                -webkit-transition all 0.3s linear
+                -moz-transition all 0.3s linear
+                width 100.5%
+
+              input:hover
+                background #bcbcbc
+                background -moz-linear-gradient(top, #bcbcbc 0%, #efefef 50%, #bcbcbc 100%)
+                background -webkit-gradient(linear, left top, left bottom, color-stop(0%, #bcbcbc), color-stop(50%, #efefef), color-stop(100%, #bcbcbc))
+                background -webkit-linear-gradient(top, #bcbcbc 0%, #efefef 50%, #bcbcbc 100%)
+                background -o-linear-gradient(top, #bcbcbc 0%, #efefef 50%, #bcbcbc 100%)
+                background -ms-linear-gradient(top, #bcbcbc 0%, #efefef 50%, #bcbcbc 100%)
+                background linear-gradient(to bottom, #bcbcbc 0%, #efefef 50%, #bcbcbc 100%)
+                color #226
+            
+            #principal_proyecto
+              overflow auto
+
+        .panel_menu
+          
+          .panel_menu_actual
+            background-color #1e71b8 !important
+            color #fff !important
+
+            a
+              color #fff !important
+
+          ul 
+            
+            li
+              display inline-block
+              background-color #aec6da
+              border-radius 5px 5px 0px 0px
+              padding 5px
+              color #000
+              border solid 1px #687d8f
+              -webkit-box-shadow inset 0px 0px 1px 1px #fff
+              -moz-box-shadow inset 0px 0px 1px 1px #fff
+              box-shadow inset 0px 0px 1px 1px #fff
+              font-weight 900
+              font-size 0.9em
+              min-width 160px
+
+              img
+                vertical-align middle
+                margin-right 5px
+
+              a
+                text-decoration none
+                color #000
+
+      .proxima_entrega
+        border 1px solid #fff;
+        padding 0px 10px 2px 10px !important
+        background vinotinto
+        display block!important
+
+    .layout_contenido_inicial
+      background: rgba(255,255,255,0.9);
+      border-left: 0px;
+      border-right: 0px;
+      bottom: 30px;
+      height       :auto;
+      left: 0px;
+      margin: 0 auto;
+      overflow     : auto;
+      padding: 25px 50px;
+      position: absolute;
+      right: 0px;
+      top: 43px;
+      vertical-align: top;
+      width: auto;
+    
+    .layout_footer
+      background: #324664; /* Old browsers */
+      background: -moz-linear-gradient(top,  #324664 0%, #3f587d 11%, #47648e 21%, #3e587d 32%, #374d6c 39%, #101721 68%, #05070b 79%, #000000 86%, #000000 100%); /* FF3.6+ */
+      background: -ms-linear-gradient(top,  #324664 0%,#3f587d 11%,#47648e 21%,#3e587d 32%,#374d6c 39%,#101721 68%,#05070b 79%,#000000 86%,#000000 100%); /* IE10+ */
+      background: -o-linear-gradient(top,  #324664 0%,#3f587d 11%,#47648e 21%,#3e587d 32%,#374d6c 39%,#101721 68%,#05070b 79%,#000000 86%,#000000 100%); /* Opera 11.10+ */
+      background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#324664), color-stop(11%,#3f587d), color-stop(21%,#47648e), color-stop(32%,#3e587d), color-stop(39%,#374d6c), color-stop(68%,#101721), color-stop(79%,#05070b), color-stop(86%,#000000), color-stop(100%,#000000)); /* Chrome,Safari4+ */
+      background: -webkit-linear-gradient(top,  #324664 0%,#3f587d 11%,#47648e 21%,#3e587d 32%,#374d6c 39%,#101721 68%,#05070b 79%,#000000 86%,#000000 100%); /* Chrome10+,Safari5.1+ */
+      background: linear-gradient(to bottom,  #324664 0%,#3f587d 11%,#47648e 21%,#3e587d 32%,#374d6c 39%,#101721 68%,#05070b 79%,#000000 86%,#000000 100%); /* W3C */
+      bottom:0px;
+      clear        :both !important;
+      color        :rgba(255,255,255,1);
+      font-size: 14px;
+      line-height  :30px;
+      margin       :0px auto;
+      min-height   :30px;
+      position: absolute;
+      text-align   :center;
+      width: 100%;
+      z-index: 2;
+
+      a
+        text-decoration: none;
+
+        span
+          border-radius: 100%;
+          border: 1px solid white;
+          font-family: icomoon;
+
+          &:hover
+            box-shadow: 0px 0px 10px 5px rgba(255,255,255,0.9);
+            -moz-box-shadow: 0px 0px 10px 5px rgba(255,255,255,0.9);
+            -webkit-box-shadow: 0px 0px 10px 5px rgba(255,255,255,0.9);
+
+      div
+        display: inline-block;
+    
+    /* codigos iconos */
+    .icon-group:before {
+            font-family: icomoon;
+      font-weight: 400;
+            content: "\e600";
+    }
+    .icon-user-md:before {
+            font-family: icomoon;
+      font-weight: 400;
+            content: "\e604";
+    }
+    .icon-youtube:before {
+            font-family: icomoon;
+      font-weight: 400;
+            content: "\e60a";
+    }
+    .icon-file-settings:before {
+            font-family: icomoon;
+      font-weight: 400;
+            content: "\e601";
+    }
+    .icon-library:before {
+            font-family: icomoon;
+      font-weight: 400;
+            content: "\e602";
+    }
+    .icon-calendar:before {
+            font-family: icomoon;
+      font-weight: 400;
+            content: "\e603";
+    }
+    .icon-off:before {
+            font-family: icomoon;
+      font-weight: 400;
+            content: "\e605";
+    }
+    .icon-minus:before {
+            font-family: icomoon;
+      font-weight: 400;
+            content: "\e606";
+    }
+    .icon-cancel:before {
+            font-family: icomoon;
+      font-weight: 400;
+            content: "\e607";
+    }
+    .icon-checkmark:before {
+      font-family: icomoon;
+      font-weight: 400;
+      content: "\e608";
+    }
+    .icon-suitcase:before {
+      font-family: icomoon;
+      font-weight: 400;
+      content: "\e609";
+    }
+    .icon-cloudy:before {
+      font-family: icomoon;
+      font-weight: 400;
+      content: "\e60b";
+    }
+    .icon-auction:before {
+      font-family: icomoon;
+      font-weight: 400;
+      content: "\e60d";
+    }
+    .icon-stats:before {
+      font-family: icomoon;
+      font-weight: 400;
+      content: "\e60c";
+    }
+    .icon-facebook2:before {
+      background-color: white;
+      border-radius: 50%;
+      color: #226;
+      content: "\e610";
+      font-family: icomoon;
+      font-weight: 400;
+    }
+    .icon-github:before {
+      background-color: white;
+      border-radius: 50%;
+      color: black;
+      content: "\e611";
+      font-family: icomoon;
+      font-weight: 400;
+    }
+    .icon-twitter:before {
+      background-color: white;
+      border-radius: 50%;
+      color: #55acee;
+      content: "\e612";
+      font-family: icomoon;
+      font-weight: 400;
+    }
+    .icon-batman:before {
+      font-family: icomoon;
+      font-weight: 400;
+      content: "\e60f";
+    }
+    .icon-earth:before {
+      font-family: icomoon;
+      font-weight: 400;
+      content: "\e613";
+    }
+    .icon-superman:before {
+      font-family: icomoon;
+      font-weight: 400;
+      content: "\e615";
+    }
+    .icon-skeletor:before {
+      font-family: icomoon;
+      font-weight: 400;
+      content: "\e614";
+    }
+    .icon-graduate:before {
+      font-family: icomoon;
+      font-weight: 400;
+      content: "\e60e";
+    }
+    .icon-pigpenx:before {
+      font-family: icomoon;
+      font-weight: 400;
+      content: "\e616";
+    }
+    .icon-pigpenx:before {
+      font-family: icomoon;
+      font-weight: 400;
+      content: "\e616";
+    }
+
+#login
+  background #324664
+  background -moz-linear-gradient(top, #324664 0%, #3f587d 11%, #47648e 21%, #3e587d 32%, #374d6c 39%, #101721 68%, #05070b 79%, #000 86%, #000 100%)
+  background -webkit-gradient(linear, left top, left bottom, color-stop(0%, #324664), color-stop(11%, #3f587d), color-stop(21%, #47648e), color-stop(32%, #3e587d), color-stop(39%, #374d6c), color-stop(68%, #101721), color-stop(79%, #05070b), color-stop(86%, #000), color-stop(100%, #000))
+  background -webkit-linear-gradient(top, #324664 0%, #3f587d 11%, #47648e 21%, #3e587d 32%, #374d6c 39%, #101721 68%, #05070b 79%, #000 86%, #000 100%)
+  background -o-linear-gradient(top, #324664 0%, #3f587d 11%, #47648e 21%, #3e587d 32%, #374d6c 39%, #101721 68%, #05070b 79%, #000 86%, #000 100%)
+  background -ms-linear-gradient(top, #324664 0%, #3f587d 11%, #47648e 21%, #3e587d 32%, #374d6c 39%, #101721 68%, #05070b 79%, #000 86%, #000 100%)
+  background linear-gradient(to bottom, #324664 0%, #3f587d 11%, #47648e 21%, #3e587d 32%, #374d6c 39%, #101721 68%, #05070b 79%, #000 86%, #000 100%)
+  border-radius 5px 5px 6px 6px
+  bottom 0
+  -webkit-box-shadow 0px 0px 15px 1px #666
+  -moz-box-shadow 0px 0px 15px 1px #666
+  left 0
+  margin auto
+  max-height 200px
+  max-width 345px
+  padding 0px
+  position absolute
+  right 0
+  text-align center
+  top 0
+
+  #formulario
+    background-color rgba(255,255,255,0.9)
+    border-radius 5px
+    color #333
+    margin 5px 10 10px 10px
+    padding 10px 4px
+
+    div
+      display inline-block
+      vertical-align middle
+
+    figure
+      margin-right 4px
+
+    input
+      border-radius 4px
+      border 1px solid #77f
+      color #225
+      margin-bottom 5px
+
+    span
+      color #225
+
+  #titulo h2
+    color #eee
+    font-family tahoma, arial, verdana, sans-serif
+    font-size 14px
+    padding 5px
+    position relative
+    text-shadow 0px 0px 8px #000
+
+  .submit #submit_icon
+    display inline-block
+
+  .submit 
+
+
+    input
+      background #324664
+      background -moz-linear-gradient(top, #324664 0%, #3f587d 11%, #47648e 21%, #3e587d 32%, #374d6c 39%, #101721 68%, #05070b 79%, #000 86%, #000 100%)
+      background -webkit-gradient(linear, left top, left bottom, color-stop(0%, #324664), color-stop(11%, #3f587d), color-stop(21%, #47648e), color-stop(32%, #3e587d), color-stop(39%, #374d6c), color-stop(68%, #101721), color-stop(79%, #05070b), color-stop(86%, #000), color-stop(100%, #000))
+      background -webkit-linear-gradient(top, #324664 0%, #3f587d 11%, #47648e 21%, #3e587d 32%, #374d6c 39%, #101721 68%, #05070b 79%, #000 86%, #000 100%)
+      background -o-linear-gradient(top, #324664 0%, #3f587d 11%, #47648e 21%, #3e587d 32%, #374d6c 39%, #101721 68%, #05070b 79%, #000 86%, #000 100%)
+      background -ms-linear-gradient(top, #324664 0%, #3f587d 11%, #47648e 21%, #3e587d 32%, #374d6c 39%, #101721 68%, #05070b 79%, #000 86%, #000 100%)
+      background linear-gradient(to bottom, #324664 0%, #3f587d 11%, #47648e 21%, #3e587d 32%, #374d6c 39%, #101721 68%, #05070b 79%, #000 86%, #000 100%)
+      border-radius 0px 0px 5px 5px
+      border-top 1px solid #fff
+      border 1px solid rgba(255,255,255,0)
+      color #ddd
+      margin-top 15px
+      margin 0px
+      padding 10px
+      text-align center
+      transition all 0.3s linear
+      -webkit-transition all 0.3s linear
+      -moz-transition all 0.3s linear
+      width 100%
+
+    input:hover
+      background #bcbcbc
+      background -moz-linear-gradient(top, #bcbcbc 0%, #efefef 50%, #bcbcbc 100%)
+      background -webkit-gradient(linear, left top, left bottom, color-stop(0%, #bcbcbc), color-stop(50%, #efefef), color-stop(100%, #bcbcbc))
+      background -webkit-linear-gradient(top, #bcbcbc 0%, #efefef 50%, #bcbcbc 100%)
+      background -o-linear-gradient(top, #bcbcbc 0%, #efefef 50%, #bcbcbc 100%)
+      background -ms-linear-gradient(top, #bcbcbc 0%, #efefef 50%, #bcbcbc 100%)
+      background linear-gradient(to bottom, #bcbcbc 0%, #efefef 50%, #bcbcbc 100%)
+      color #226
+
+.no_hay_registros
+  background-color rgba(255,255,255,0.9)
+  color #335
+  font-size 25px
+  font-weight 900
+  height 100px
+  border-radius 10px
+  position relative
+  top 30px
+  left 0px 
+  right 0px
+  text-align center
+  width 200px
+  box-shadow 0px 0px 15px 10px rgba(255,255,255,0.9)
+  -moz-box-shadow 0px 0px 15px 10px rgba(255,255,255,0.9)
+  -webkit-box-shadow 0px 0px 15px 10px rgba(255,255,255,0.9)
+
+  span
+    display block
+
+.no_hay_registros:after
+  background-color rgba(255,255,255,0.8)
+  color #335
+  font-size 25px
+  font-weight 900
+  font-family icomoon
+  content 
+
+
+/* Responsive */
+@media screen and (min-width: 690px)
+
+  body 
+    border 2px solid red
+
+  .layout_contenido
+    top 30px
+
+@media screen and (max-width: 690px) and (min-width: 608px)
+
+  body 
+  
+    border 2px solid green
+  
+    .layout_contenido
+    
+      top 30px
+    
+    .layout_contenido_inicial
+    
+      top 100px
+
+    .itemsDocumento
+
+      .contenidoItemsDocumento
+        color #333
+        position relative
+        overflow auto
+        width auto
+        display block
+        text-align left
+
+        div
+          display inline-block
+
+        .orden
+          width 60px!important
+          position absolute
+          left 0px
+          bottom 0px
+        
+        .item
+          width auto
+          display block!important
+          border-left 1px solid rgba(0,0,0,0)
+          border-right 1px solid rgba(0,0,0,0)
+          border-bottom 1px solid rgba(200,200,200,0)!important
+
+        .caracteres
+          display: block!important;
+          margin-left:  70px!important;
+          margin-right: 70px!important;
+          width auto!important
+          float none!important
+
+        .lineas
+          width 60px 
+          float right
+          
+
+      .tituloItemsDocumento
+        color #fff
+
+        div
+          display inline-block
+
+        .orden
+          width 60px!important
+          position absolute
+          left 0px
+          bottom 0px
+        
+        .item
+          width auto
+          display block!important
+          border-left 1px solid rgba(0,0,0,0)
+          border-right 1px solid rgba(0,0,0,0)
+
+        .caracteres
+          display: block!important;
+          margin-left:  70px!important;
+          margin-right: 70px!important;
+          width auto!important
+          float none!important
+
+        .lineas
+          width 60px 
+          float right
+  
+  header 
+
+    #layout_menu_inicio
+      display inline-block
+      text-align center
+      top 0px
+      right 0px
+      position absolute!important
+  
+    .layout_titleLogout
+      display inline-block
+      margin 0px
+      padding 0px
+      top 0px!important
+      position relative!important
+  
+      h1
+        margin 0px
+        padding 10px 0px 0px 0px!important
+        display block
+  
+
+@media screen and (max-width: 607px) and (min-width: 501px)
+
+  body 
+    border 2px solid blue
+    
+    header
+      position relative
+  
+      #logo
+
+        h2
+    
+      #layout_menu_inicio
+        display inline-block
+        text-align center
+        top 0px
+        right 0px
+        position absolute!important
+    
+      #layout_usuario
+        position absolute
+        top 0px
+        right 0px
+        padding-left 30px
+        padding-right 12px
+        margin 0px
+    
+      .layout_title
+        position static!important
+        display block
+        margin 0px
+        padding 0px
+        min-width: 0px
+        height 45px
+    
+        h1  
+          display inline-block
+          padding 5px 30px!important
+          margin 0px
+    
+      .layout_titleLogout
+        display inline-block
+        margin 0px
+        padding 0px
+        top 0px!important
+        position relative!important
+    
+        h1
+          margin 0px
+          padding 5px 10px 0px 10px!important
+          display block
+    
+    .itemsDocumento
+
+      .contenidoItemsDocumento
+        color #333
+        position relative
+        overflow auto
+        width auto
+        display block
+        text-align left
+
+        div
+          display inline-block
+
+        .orden
+          width 60px!important
+          position absolute
+          left 0px
+          bottom 0px
+        
+        .item
+          width auto
+          display block!important
+          border-left 1px solid rgba(0,0,0,0)
+          border-right 1px solid rgba(0,0,0,0)
+          border-bottom 1px solid rgba(200,200,200,0)!important
+
+        .caracteres
+          display: block!important;
+          margin-left:  70px!important;
+          margin-right: 70px!important;
+          width auto!important
+          float none!important
+
+        .lineas
+          width 60px 
+          float right
+          
+
+      .tituloItemsDocumento
+        color #fff
+
+        div
+          display inline-block
+
+        .orden
+          width 60px!important
+          position absolute
+          left 0px
+          bottom 0px
+        
+        .item
+          width auto
+          display block!important
+          border-left 1px solid rgba(0,0,0,0)
+          border-right 1px solid rgba(0,0,0,0)
+
+        .caracteres
+          display: block!important;
+          margin-left:  70px!important;
+          margin-right: 70px!important;
+          width auto!important
+          float none!important
+
+        .lineas
+          width 60px 
+          float right
+
+    input[type="file"]
+      width 180px!important
+    
+    input[type="text"]
+      width 180px!important
+  
+    .layout_contenido
+      top 70px!important
+    
+    .layout_contenido_inicial
+      top 100px
+  
+    .layout_nav
+      top 90px
+    
+    #login
+      max-height 300px
+    
+      #formulario 
+
+        div
+          display block
+    
+    #logo_skew_left
+    
+      display none
+    
+    .panel_menu 
+
+      ul 
+
+        li
+          text-align center !important 
+    
+    select
+      color #000
+      border 1px solid #324664
+      font-size 12px !important
+      width 180px
+  
+
+
+@media screen and (max-width: 500px) and (min-width: 381px)
+
+  body 
+  
+    border 2px solid yellow
+  
+    input[type="text"]
+      width 180px !important    
+    
+    header
+      position relative
+    
+      #layout_menu_inicio
+        display inline-block
+        text-align center
+        top 0px
+        right 0px
+        position absolute!important
+    
+      #layout_usuario
+        position absolute
+        top 0px
+        right 0px
+        padding-left 80px
+        padding-right 12px
+        margin 0px
+    
+      .layout_title
+        position static!important
+        display block
+        margin 0px
+        padding 0px
+        min-width: 0px
+        height 45px
+    
+        h1
+          display inline-block
+          padding 5px 30px!important
+          margin 0px
+    
+      .layout_titleLogout
+        display inline-block
+        margin 0px
+        padding 0px
+        top 0px!important
+        position relative!important
+    
+        h1
+          margin 0px
+          padding 3px 10px 0px 10px!important
+          display block
+    
+    .itemsDocumento
+
+      .contenidoItemsDocumento
+        color #333
+        position relative
+        overflow auto
+        width auto
+        display block
+        text-align left
+
+        div
+          display inline-block
+
+        .orden
+          width 60px!important
+          position absolute
+          left 0px
+          bottom 0px
+        
+        .item
+          width auto
+          display block!important
+          border-left 1px solid rgba(0,0,0,0)
+          border-right 1px solid rgba(0,0,0,0)
+          border-bottom 1px solid rgba(200,200,200,0)!important
+
+        .caracteres
+          display: block!important;
+          margin-left:  70px!important;
+          margin-right: 70px!important;
+          width auto!important
+          float none!important
+
+        .lineas
+          width 60px 
+          float right
+          
+
+      .tituloItemsDocumento
+        color #fff
+
+        div
+          display inline-block
+
+        .orden
+          width 60px!important
+          position absolute
+          left 0px
+          bottom 0px
+        
+        .item
+          width auto
+          display block!important
+          border-left 1px solid rgba(0,0,0,0)
+          border-right 1px solid rgba(0,0,0,0)
+
+        .caracteres
+          display: block!important;
+          margin-left:  70px!important;
+          margin-right: 70px!important;
+          width auto!important
+          float none!important
+
+        .lineas
+          width 60px 
+          float right
+
+    .layout_contenido
+      top 110px!important
+      left 0px!important
+    
+    .layout_contenido_inicial
+      top 100px
+
+    .layout_nav
+      display block
+      overflow hidden
+      position relative
+      top 0px
+      width 100%
+    
+      div 
+        display block
+        height auto
+    
+      ul
+        display block
+        border-bottom 1px solid #225
+        
+        a
+          color #226
+          cursor pointer
+          display inline-block
+          padding 5px 10px
+          z-index 2
+
+        li
+          text-align center
+          display none
+
+        &:hover
+          
+          li
+            display inline-block!important
+    
+      #lista
+        font-size 16px
+        display block!important
+        color #ddd
+        vertical-align top
+        padding 10px 0px
+
+    #login
+    
+      max-height 300px
+    
+    #login #formulario div
+    
+      display block
+    
+    #logo_skew_left
+    
+      display none
+    
+
+    .panel_menu 
+
+      ul 
+
+        li
+          display inline-block !important
+          text-align center !important 
+      
+
+@media screen and (max-width: 380px) and (min-width: 321px)
+
+  body 
+    border 2px solid red
+  
+    input[type="file"]
+      width 180px !important
+    
+    input[type="text"]
+      width 180px !important
+        
+    header
+      position relative
+      overflow hidden
+
+      .headerLogin
+        text-align left !important
+        display inline-block !important
+    
+      .layout_title
+        position static!important
+        display block
+        margin 0px
+        padding 0px
+        min-width: 0px
+        height 45px
+    
+        h1
+          display inline-block
+          padding 5px 20px!important
+          margin 0px
+    
+      #logo
+        display block
+        text-align  center
+    
+      #layout_usuario
+        margin 0px
+        padding 7px 12px 7px 80px
+        position absolute
+        right 0px
+        top 0px
+      
+      #layout_menu_inicio
+        display block
+        text-align center
+        width 100%
+    
+        #logo_skew_left
+          display none
+    
+      .layout_titleLogout
+        display block
+        margin 0px
+        padding 0px
+        position relative!important
+      
+        h1
+          margin 0px
+          padding 3px 10px 0px 10px!important
+          display block
+    
+    .itemsDocumento
+
+      .contenidoItemsDocumento
+        color #333
+        position relative
+        overflow auto
+        width auto
+        display block
+        text-align left
+
+        div
+          display inline-block
+
+        .orden
+          width 60px!important
+          position absolute
+          left 0px
+          bottom 0px
+        
+        .item
+          width auto
+          display block!important
+          border-left 1px solid rgba(0,0,0,0)
+          border-right 1px solid rgba(0,0,0,0)
+          border-bottom 1px solid rgba(200,200,200,0)!important
+
+        .caracteres
+          display: block!important;
+          margin-left:  70px!important;
+          margin-right: 70px!important;
+          width auto!important
+          float none!important
+
+        .lineas
+          width 60px 
+          float right
+          
+
+      .tituloItemsDocumento
+        color #fff
+
+        div
+          display inline-block
+
+        .orden
+          width 60px!important
+          position absolute
+          left 0px
+          bottom 0px
+        
+        .item
+          width auto
+          display block!important
+          border-left 1px solid rgba(0,0,0,0)
+          border-right 1px solid rgba(0,0,0,0)
+
+        .caracteres
+          display: block!important;
+          margin-left:  70px!important;
+          margin-right: 70px!important;
+          width auto!important
+          float none!important
+
+        .lineas
+          width 60px 
+          float right
+
+    .layout_contenido
+      top 110px!important
+      left 0px!important
+    
+    .layout_contenido_inicial
+      top 140px
+
+    .layout_nav
+      display block
+      overflow hidden
+      position relative
+      top 0px
+      width 100%
+    
+      div 
+        display block
+        height auto
+    
+      ul
+        display block
+        border-bottom 1px solid #225
+
+        li
+          text-align center
+          display none
+
+          a
+            color #226
+            cursor pointer
+            display inline-block
+            padding 5px 10px
+            z-index 2
+          
+        #lista
+          color #ddd
+          display block!important
+          font-size 16px
+          padding 10px 0px
+          vertical-align top
+  
+        &:hover 
+
+          li
+            display inline-block!important
+    
+    #login
+      max-height 300px
+    
+      #formulario 
+
+        div
+          display block
+    
+    #logo_skew_left
+      display none
+    
+    .panel_menu 
+
+      ul 
+
+        li
+          display block !important
+          text-align center !important 
+    
+    select
+      border 1px solid #324664
+      color #000
+      font-size 12px !important
+      width 180px
+    
+
+@media screen and (max-width: 320px) and (min-width: 0px)
+
+  body 
+  
+    border 2px solid white
+  
+    input[type="file"]
+      width 180px !important
+    
+    input[type="text"]
+      width 180px !important
+    
+    header
+      position relative
+      background -moz-linear-gradient(top,  #bcbcbc 0%, #efefef 50%, #bcbcbc 100%)!important
+      background -webkit-gradient(linear, left top, left bottom, color-stop(0%,#bcbcbc), color-stop(50%,#efefef), color-stop(100%,#bcbcbc))!important
+      background -webkit-linear-gradient(top,  #bcbcbc 0%,#efefef 50%,#bcbcbc 100%)!important
+      background -o-linear-gradient(top,  #bcbcbc 0%,#efefef 50%,#bcbcbc 100%)!important
+      background -ms-linear-gradient(top,  #bcbcbc 0%,#efefef 50%,#bcbcbc 100%)!important
+      background linear-gradient(to bottom,  #bcbcbc 0%,#efefef 50%,#bcbcbc 100%)!important
+      
+      .headerLogin
+        text-align left !important
+        display inline-block !important
+      
+      #logo
+        background rgba(255,255,255,0)
+        display block
+        text-align  center
+    
+        figure 
+          
+          img
+            width 27px
+        
+        h2
+          font-size 20px 
+    
+    
+        #logo_skew_right
+          display none
+          position relative!important
+    
+      #layout_menu_inicio
+        background rgba(255,255,255,0)
+        display block
+        float none
+        position static
+        text-align center
+        width 100%
+    
+        nav 
+
+          ul
+            background rgba(255,255,255,0)
+            position static
+    
+            li 
+
+              a
+                font-size 14px
+                background rgba(255,255,255,0)
+    
+        #logo_skew_left
+          display none
+    
+      #layout_usuario
+        margin 0px
+        padding 5px 12px 4px 80px
+        position absolute
+        right 0px
+        top 0px
+    
+      .layout_title
+        display none!important
+    
+        h1
+          display none
+          font-size 14px
+          margin 0px
+          padding 3px
+    
+      .layout_titleLogout
+        display none!important
+    
+    .itemsDocumento
+
+      .contenidoItemsDocumento
+        color #333
+        position relative
+        overflow auto
+        width auto
+        display block
+        text-align left
+
+        div
+          display inline-block
+
+        .orden
+          width 60px!important
+          position absolute
+          left 0px
+          bottom 0px
+        
+        .item
+          width auto
+          display block!important
+          border-left 1px solid rgba(0,0,0,0)
+          border-right 1px solid rgba(0,0,0,0)
+          border-bottom 1px solid rgba(200,200,200,0)!important
+
+        .caracteres
+          display: block!important;
+          margin-left:  70px!important;
+          margin-right: 70px!important;
+          width auto!important
+          float none!important
+
+        .lineas
+          width 60px 
+          float right
+          
+
+      .tituloItemsDocumento
+        color #fff
+
+        div
+          display inline-block
+
+        .orden
+          width 60px!important
+          position absolute
+          left 0px
+          bottom 0px
+        
+        .item
+          width auto
+          display block!important
+          border-left 1px solid rgba(0,0,0,0)
+          border-right 1px solid rgba(0,0,0,0)
+
+        .caracteres
+          display: block!important;
+          margin-left:  70px!important;
+          margin-right: 70px!important;
+          width auto!important
+          float none!important
+
+        .lineas
+          width 60px 
+          float right
+
+    .layout_contenido
+      top 60px!important
+      left 10px!important
+
+    .layout_contenido_inicial
+      top 80px
+
+    .layout_nav
+      display block
+      overflow hidden
+      position relative
+      top 0px
+      width 100%
+    
+      a 
+
+        span
+          font-size 40px  
+    
+      div 
+        display block
+        height auto
+    
+      ul
+        display block
+        border-bottom 1px solid #225
+    
+        #lista
+          font-size 16px
+          display block!important
+          color #ddd
+          vertical-align top
+          padding 10px 0px
+
+        &:hover 
+
+          li
+            display inline-block!important
+    
+        li
+          text-align center
+          display none
+
+          a
+            color #226
+            cursor pointer
+            display inline-block
+            padding 5px 10px
+            z-index 2
+    
+    #login
+    
+      max-height 230px
+    
+      #formulario 
+
+        div
+          display block
+    
+          figure 
+
+            img
+              width 50px
+    
+    #logo_skew_left
+      display none
+    
+    .panel_menu 
+
+      ul 
+
+        li
+          display block !important
+          text-align center !important 
+    
+    select
+      color #000
+      border 1px solid #324664
+      font-size 12px !important
+      width 180px
+
+/* Responsive */
+
+
+/* Animacion cargando */
+.frame_cargando
+  background-color rgba(255,255,255,0.9)
+  border-radius 10px
+  box-shadow 0px 0px 15px 10px rgba(255,255,255,0.9)
+  -moz-box-shadow 0px 0px 15px 10px rgba(255,255,255,0.9)
+  -webkit-box-shadow 0px 0px 15px 10px rgba(255,255,255,0.9)
+  display none
+  left 0px
+  padding 10px
+  position absolute
+  right 0px
+  top 80px
+  width 120px
+  z-index 2
+
+  #circular3dG
+    position relative
+    width 80px
+    height 80px
+
+
+    .circular3dG
+      position absolute
+      background-color #040075
+      width 23px
+      height 23px
+      -moz-border-radius 24px
+      -moz-animation-name bounce_circular3dG
+      -moz-animation-duration 0.96s
+      -moz-animation-iteration-count infinite
+      -moz-animation-direction linear
+      -webkit-border-radius 24px
+      -webkit-animation-name bounce_circular3dG
+      -webkit-animation-duration 0.96s
+      -webkit-animation-iteration-count infinite
+      -webkit-animation-direction linear
+      -o-border-radius 24px
+      -o-animation-name bounce_circular3dG
+      -o-animation-duration 0.96s
+      -o-animation-iteration-count infinite
+      -o-animation-direction linear
+      -ms-border-radius 24px
+      -ms-animation-name bounce_circular3dG
+      -ms-animation-duration 0.96s
+      -ms-animation-iteration-count infinite
+      -ms-animation-direction linear
+
+    #circular3d_1G
+      left 33px
+      top 5px
+      -moz-animation-delay 0.36s
+      -webkit-animation-delay 0.36s
+      -o-animation-delay 0.36s
+      -ms-animation-delay 0.36s
+
+    #circular3d_2G
+      left 49px
+      top 19px
+      -moz-animation-delay 0.48s
+      -webkit-animation-delay 0.48s
+      -o-animation-delay 0.48s
+      -ms-animation-delay 0.48s
+
+    #circular3d_3G
+      left 59px
+      top 36px
+      -moz-animation-delay 0.6s
+      -webkit-animation-delay 0.6s
+      -o-animation-delay 0.6s
+      -ms-animation-delay 0.6s
+
+    #circular3d_4G
+      left 55px
+      top 54px
+      -moz-animation-delay 0.72s
+      -webkit-animation-delay 0.72s
+      -o-animation-delay 0.72s
+      -ms-animation-delay 0.72s
+
+    #circular3d_5G
+      left 34px
+      top 59px
+      -moz-animation-delay 0.8400000000000001s
+      -webkit-animation-delay 0.8400000000000001s
+      -o-animation-delay 0.8400000000000001s
+      -ms-animation-delay 0.8400000000000001s
+
+    #circular3d_6G
+      left 6px
+      top 39px
+      -moz-animation-delay 0.96s
+      -webkit-animation-delay 0.96s
+      -o-animation-delay 0.96s
+      -ms-animation-delay 0.96s
+
+    #circular3d_7G
+      left 0px
+      top 11px
+      -moz-animation-delay 1.0799999999999998s
+      -webkit-animation-delay 1.0799999999999998s
+      -o-animation-delay 1.0799999999999998s
+      -ms-animation-delay 1.0799999999999998s
+
+    #circular3d_8G
+      left 14px
+      top 0px
+      -moz-animation-delay 1.2s
+      -webkit-animation-delay 1.2s
+      -o-animation-delay 1.2s
+      -ms-animation-delay 1.2s
+  .cargando
+    font-size 25px
+    font-weight 900
+
+@-moz-keyframes bounce_circular3dG
+  0%
+    -moz-transform:scale(1)
+  100%
+    -moz-transform:scale(.3)
+
+@-webkit-keyframes bounce_circular3dG
+  0%
+    -webkit-transform:scale(1)
+  100%
+    -webkit-transform:scale(.3)
+
+@-o-keyframes bounce_circular3dG
+  0%
+    -o-transform:scale(1)
+  100%
+    -o-transform:scale(.3)
+
+@-ms-keyframes bounce_circular3dG
+  0%
+    -ms-transform:scale(1)
+  100%
+    -ms-transform:scale(.3)
+
+@-webkit-keyframes mensaje_flash 
+  0% 
+    opacity 1
+  70% 
+    opacity 1
+  90% 
+    z-index 0
+  99% 
+    opacity 0 
+    z-index -3
+    display none
+  100% 
+    opacity 0 
+    z-index -5
+    display none

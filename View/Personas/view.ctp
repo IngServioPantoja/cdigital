@@ -28,7 +28,11 @@
 					</tr>
 					<tr>	
 						<th>Programa</th>
-						<td><?php echo h($persona['Programa']['nombre']); ?></td>
+						<td><?php echo h($persona['Persona']['Programa'][0]['nombre']); ?></td>
+					</tr>
+					<tr>	
+						<th>Facultad</th>
+						<td><?php echo h($persona['Persona']['Programa'][0]['Facultad']['nombre']); ?></td>
 					</tr>
 				</table>
 		</fieldset>

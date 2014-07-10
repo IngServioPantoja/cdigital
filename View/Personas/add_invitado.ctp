@@ -41,6 +41,20 @@ $nuevafecha2 = date ( 'Y-m-d' , $nuevafecha2 );
 							<?php echo $this->Form->input("identificacion", array("label" => false,"required" => "required","pattern"=>"[0-9]+"));?>
 						</td>
 					</tr>
+					<?php
+					if(isset($estado_cedula))
+					{
+					?>
+					<tr>
+						<td colspan="2">
+							<p class="estado_c_e">
+								<?php echo $estado_cedula; ?>
+							</p>
+						</td>
+					</tr>
+					<?php
+					}
+					?>
 					<tr>	
 						<th>
 							Nombre

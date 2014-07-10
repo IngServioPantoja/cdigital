@@ -43,7 +43,8 @@ class NivelesController extends AppController {
 			$this->Nivel->create();
 			if ($this->Nivel->save($this->request->data)) {
 				$this->Session->setFlash(__('The nivel has been saved'));
-				$this->redirect(array('action' => 'index'));
+				print_r($this->request->data);
+				//$this->redirect(array('action' => 'index'));
 			} else {
 				$this->Session->setFlash(__('The nivel could not be saved. Please, try again.'));
 			}
